@@ -27,10 +27,6 @@ class Wrapper extends React.Component {
   render() {
     const styles = {
       wrapper: {
-        display: 'block',
-        flexFlow: 'row wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
         border: '1px solid #eee',
         borderRadius: 3,
         backgroundColor: '#FAFAFA',
@@ -56,16 +52,28 @@ class Wrapper extends React.Component {
     };
     const showCard = () => {
       if (this.state.isLogin && !this.state.isRecoveringPassword) {
-        return <Login key="login-form" handleShowSignup={this.updateState} handleShowRecover={this.updateState} />;
+        return (<Login
+          key="login-form"
+          handleShowSignup={this.updateState}
+          handleShowRecover={this.updateState}
+          styles={this.props.styles.login}
+        />);
       } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
-        return <Signup key="signup-form" handleShowLogin={this.updateState} />;
+        return (<Signup
+          key="signup-form"
+          handleShowLogin={this.updateState}
+          styles={this.props.styles.signup}
+        />);
       }
-      return <RecoverPassword handleShowLogin={this.updateState} />;
+      return (<RecoverPassword
+        handleShowLogin={this.updateState}
+        styles={this.props.styles.recoverPassword}
+      />);
     };
     return (
-      <section style={styles.wrapper}>
-        <h1 style={styles.title}>{this.props.title}</h1>
-        <div style={styles.flipper}>
+      <section id="main-wrapper" style={Object.assign(styles.wrapper, this.props.styles.mainWrapper)}>
+        <h1 style={Object.assign(styles.title, this.props.styles.mainTitle)}>{this.props.title}</h1>
+        <div style={Object.assign(styles.flipper, this.props.styles.flipper)}>
           {showCard()}
         </div>
       </section>
@@ -77,12 +85,42 @@ Wrapper.propTypes = {
   title: React.PropTypes.string,
   isLogin: React.PropTypes.bool,
   isRecoveringPassword: React.PropTypes.bool,
+  styles: React.PropTypes.shape({
+    mainWrapper: React.PropTypes.object,
+    mainTitle: React.PropTypes.object,
+    flipper: React.PropTypes.object,
+    signup: React.PropTypes.shape({
+      wrapper: React.PropTypes.object,
+      inputWrapper: React.PropTypes.object,
+      buttonsWrapper: React.PropTypes.object,
+      input: React.PropTypes.object,
+      recoverPassword: React.PropTypes.object,
+      button: React.PropTypes.object,
+    }),
+    login: React.PropTypes.shape({
+      wrapper: React.PropTypes.object,
+      inputWrapper: React.PropTypes.object,
+      buttonsWrapper: React.PropTypes.object,
+      input: React.PropTypes.object,
+      recoverPasswordWrapper: React.PropTypes.object,
+      recoverPasswordButton: React.PropTypes.object,
+      button: React.PropTypes.object,
+    }),
+    recoverPassword: React.PropTypes.shape({
+      wrapper: React.PropTypes.object,
+      inputWrapper: React.PropTypes.object,
+      buttonsWrapper: React.PropTypes.object,
+      input: React.PropTypes.object,
+      button: React.PropTypes.object,
+    }),
+  }),
 };
 
 Wrapper.defaultProps = {
   title: 'Company Name',
   isLogin: true,
   isRecoveringPassword: false,
+  styles: {},
 };
 
 

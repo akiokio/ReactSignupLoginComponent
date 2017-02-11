@@ -1,14 +1,13 @@
 import React from 'react';
 
-const styles = {
+const localStyles = {
   wrapper: {
     backfaceVisibility: 'hidden',
     position: 'absolute',
     top: 0,
     left: 0,
     transform: 'rotateY(180deg)',
-    width: 500,
-    height: 300,
+    width: '100%',
   },
   inputWrapper: {
     display: 'flex',
@@ -37,47 +36,56 @@ const styles = {
   },
 };
 
-const Signup = ({ handleShowLogin }) => (
-  <section style={styles.wrapper}>
-    <div id="fields" style={styles.inputWrapper}>
+const Signup = ({ handleShowLogin, styles }) => (
+  <section style={Object.assign(localStyles.wrapper, styles.wrapper)}>
+    <div id="fields" style={Object.assign(localStyles.inputWrapper, styles.inputWrapper)}>
       <input
-        style={styles.input}
+        style={Object.assign(localStyles.input, styles.input)}
         type="text"
         id="username"
         name="username"
         placeholder="Username"
       />
       <input
-        style={styles.input}
+        style={Object.assign(localStyles.input, styles.input)}
         type="password"
         id="password"
         name="password"
         placeholder="Password"
       />
       <input
-        style={styles.input}
+        style={Object.assign(localStyles.input, styles.input)}
         type="password"
         id="passwordConfirmation"
         name="passwordConfirmation"
         placeholder="Confirm password"
       />
     </div>
-    <div style={styles.buttonsWrapper}>
+    <div style={Object.assign(localStyles.buttonsWrapper, styles.buttonsWrapper)}>
       <button
         id="login-button"
-        style={styles.button}
+        style={Object.assign(localStyles.button, styles.button)}
         onClick={() => { handleShowLogin('isLogin', true); }}
       >Login</button>
-      <input type="submit" value="Signup" style={styles.button} />
+      <input type="submit" value="Signup" style={Object.assign(localStyles.button, styles.button)} />
     </div>
   </section>
 );
 
 Signup.propTypes = {
   handleShowLogin: React.PropTypes.func.isRequired,
+  styles: React.PropTypes.shape({
+    wrapper: React.PropTypes.object,
+    inputWrapper: React.PropTypes.object,
+    buttonsWrapper: React.PropTypes.object,
+    input: React.PropTypes.object,
+    recoverPassword: React.PropTypes.object,
+    button: React.PropTypes.object,
+  }),
 };
 
 Signup.defaultProps = {
+  styles: {},
 };
 
 export default Signup;

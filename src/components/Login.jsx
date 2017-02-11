@@ -1,6 +1,6 @@
 import React from 'react';
 
-const styles = {
+const localStyles = {
   wrapper: {
     backfaceVisibility: 'hidden',
     position: 'absolute',
@@ -8,8 +8,7 @@ const styles = {
     left: 0,
     zIndex: 2,
     transform: 'rotateY(0deg)',
-    width: 500,
-    height: 300,
+    width: '100%',
   },
   inputWrapper: {
     display: 'flex',
@@ -47,37 +46,37 @@ const styles = {
   },
 };
 
-const Login = ({ handleShowSignup, handleShowRecover }) => (
-  <section id="login-form" style={styles.wrapper}>
-    <div id="fields" style={styles.inputWrapper}>
+const Login = ({ handleShowSignup, handleShowRecover, styles }) => (
+  <section id="login-form" style={Object.assign(localStyles.wrapper, styles.wrapper )}>
+    <div id="fields" style={Object.assign(localStyles.inputWrapper, styles.inputWrapper)}>
       <input
-        style={styles.input}
+        style={Object.assign(localStyles.input, styles.input)}
         type="text"
         id="username"
         name="username"placeholder="Username"
       />
       <input
-        style={styles.input}
+        style={Object.assign(localStyles.input, styles.input)}
         type="password"
         id="password"
         name="password"
         placeholder="Password"
       />
     </div>
-    <div style={styles.buttonsWrapper}>
-      <div style={styles.recoverPasswordWrapper}>
+    <div style={Object.assign(localStyles.buttonsWrapper, styles.buttonsWrapper)}>
+      <div style={Object.assign(localStyles.recoverPasswordWrapper, styles.recoverPasswordWrapper)}>
         <button
           id="recorver-password"
-          style={styles.recoverPassword}
+          style={Object.assign(localStyles.recoverPassword, styles.recoverPasswordButton)}
           onClick={() => { handleShowRecover('isRecoveringPassword', true); }}
         >Recover Password</button>
       </div>
       <button
         id="signup-button"
-        style={styles.button}
+        style={Object.assign(localStyles.button, styles.button)}
         onClick={() => { handleShowSignup('isLogin', false); }}
       >Signup</button>
-      <input type="submit" value="Login" style={styles.button} />
+      <input type="submit" value="Login" style={Object.assign(localStyles.button, styles.button)} />
     </div>
   </section>
 );
@@ -85,10 +84,19 @@ const Login = ({ handleShowSignup, handleShowRecover }) => (
 Login.propTypes = {
   handleShowSignup: React.PropTypes.func.isRequired,
   handleShowRecover: React.PropTypes.func.isRequired,
+  styles: React.PropTypes.shape({
+    wrapper: React.PropTypes.object,
+    inputWrapper: React.PropTypes.object,
+    buttonsWrapper: React.PropTypes.object,
+    input: React.PropTypes.object,
+    recoverPasswordWrapper: React.PropTypes.object,
+    recoverPasswordButton: React.PropTypes.object,
+    button: React.PropTypes.object,
+  }),
 };
 
 Login.defaultProps = {
-
+  styles: {},
 };
 
 export default Login;

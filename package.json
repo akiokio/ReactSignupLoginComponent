@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "bulma": "^0.3.1",
     "@kadira/storybook": "^2.21.0",
     "enzyme": "2.7.1",
     "eslint": "3.15.0",
