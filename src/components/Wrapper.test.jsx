@@ -19,6 +19,7 @@ describe('the main wrapper', () => {
   it('initialize with the default state', () => {
     const wrapper = shallow(<Wrapper />);
     expect(wrapper.state().isLogin).toEqual(true);
+    expect(wrapper.state().isRecoveringPassword).toEqual(false);
     expect(wrapper.state().username).toEqual('');
     expect(wrapper.state().password).toEqual('');
   });
@@ -40,10 +41,24 @@ describe('the main wrapper', () => {
     expect(wrapper.find(Signup)).toHaveLength(1);
   });
 
-  it('show the login component on the login button click', () => {
+  it('show the login component on the login button click on signup', () => {
     const wrapper = mount(<Wrapper isLogin={false} />);
     wrapper.find('#login-button').simulate('click');
     expect(wrapper.state().isLogin).toEqual(true);
+    expect(wrapper.find(Login)).toHaveLength(1);
+  });
+
+  it('show the recover password component on the recover button click', () => {
+    const wrapper = mount(<Wrapper />);
+    wrapper.find('#recorver-password').simulate('click');
+    expect(wrapper.state().isRecoveringPassword).toEqual(true);
+    expect(wrapper.find('#recovering-password')).toHaveLength(1);
+  });
+
+  it('show the login component on the login button click on recover password', () => {
+    const wrapper = mount(<Wrapper isRecoveringPassword />);
+    wrapper.find('#login-button').simulate('click');
+    expect(wrapper.state().isRecoveringPassword).toEqual(false);
     expect(wrapper.find(Login)).toHaveLength(1);
   });
 });

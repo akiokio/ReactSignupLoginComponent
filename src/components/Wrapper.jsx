@@ -2,6 +2,7 @@ import React from 'react';
 
 import Login from './Login';
 import Signup from './Signup';
+import RecoverPassword from './RecoverPassword';
 
 // Our only css dependency
 import '../../node_modules/normalize.css';
@@ -13,6 +14,7 @@ class Wrapper extends React.Component {
 
     this.state = {
       isLogin: this.props.isLogin,
+      isRecoveringPassword: this.props.isRecoveringPassword,
       username: '',
       password: '',
     };
@@ -49,17 +51,22 @@ class Wrapper extends React.Component {
         transition: '0.4s',
         transformStyle: 'preserve-3d',
         position: 'relative',
-        transform: `rotateY(${this.state.isLogin ? '0' : '180'}deg)`,
+        transform: `rotateY(${!this.state.isLogin || this.state.isRecoveringPassword ? '180' : '0'}deg)`,
       },
+    };
+    const showCard = () => {
+      if (this.state.isLogin && !this.state.isRecoveringPassword) {
+        return <Login key="login-form" handleShowSignup={this.updateState} handleShowRecover={this.updateState} />;
+      } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
+        return <Signup key="signup-form" handleShowLogin={this.updateState} />;
+      }
+      return <RecoverPassword handleShowLogin={this.updateState} />;
     };
     return (
       <section style={styles.wrapper}>
         <h1 style={styles.title}>{this.props.title}</h1>
         <div style={styles.flipper}>
-          { this.state.isLogin
-            ? <Login key="login-form" handleShowSignup={this.updateState} />
-            : <Signup key="signup-form" handleShowLogin={this.updateState} />
-          }
+          {showCard()}
         </div>
       </section>
     );
@@ -69,11 +76,13 @@ class Wrapper extends React.Component {
 Wrapper.propTypes = {
   title: React.PropTypes.string,
   isLogin: React.PropTypes.bool,
+  isRecoveringPassword: React.PropTypes.bool,
 };
 
 Wrapper.defaultProps = {
   title: 'Company Name',
   isLogin: true,
+  isRecoveringPassword: false,
 };
 
 

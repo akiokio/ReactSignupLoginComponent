@@ -28,9 +28,18 @@ const styles = {
     height: 40,
     margin: '15px 0',
   },
-  recoverPassword: {
+  recoverPasswordWrapper: {
     width: '100%',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  recoverPassword: {
     textAlign: 'center',
+    cursor: 'pointer',
+    margin: '20px 0',
+    padding: 15,
   },
   button: {
     margin: '0 15px',
@@ -38,7 +47,7 @@ const styles = {
   },
 };
 
-const Login = ({ handleShowSignup }) => (
+const Login = ({ handleShowSignup, handleShowRecover }) => (
   <section id="login-form" style={styles.wrapper}>
     <div id="fields" style={styles.inputWrapper}>
       <input
@@ -56,7 +65,13 @@ const Login = ({ handleShowSignup }) => (
       />
     </div>
     <div style={styles.buttonsWrapper}>
-      <p id="recorver-password" style={styles.recoverPassword}>Recover Password</p>
+      <div style={styles.recoverPasswordWrapper}>
+        <button
+          id="recorver-password"
+          style={styles.recoverPassword}
+          onClick={() => { handleShowRecover('isRecoveringPassword', true); }}
+        >Recover Password</button>
+      </div>
       <button
         id="signup-button"
         style={styles.button}
@@ -69,6 +84,7 @@ const Login = ({ handleShowSignup }) => (
 
 Login.propTypes = {
   handleShowSignup: React.PropTypes.func.isRequired,
+  handleShowRecover: React.PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {

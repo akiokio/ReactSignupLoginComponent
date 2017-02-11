@@ -11,4 +11,7 @@ storiesOf('React signup login component', module)
   ))
   .add('to signup with custom title', () => (
     <Wrapper isLogin={false} title={'My awesome company'} />
+  ))
+  .add('to recover password', () => (
+    <Wrapper isRecoveringPassword />
   ));

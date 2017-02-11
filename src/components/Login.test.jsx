@@ -6,11 +6,11 @@ import Login from './Login';
 
 describe('the login form', () => {
   it('renders without crashing', () => {
-    shallow(<Login handleShowSignup={() => {}} />);
+    shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
   });
 
   it('renders the default skeleton', () => {
-    const wrapper = shallow(<Login handleShowSignup={() => {}} />);
+    const wrapper = shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);
@@ -19,7 +19,7 @@ describe('the login form', () => {
   });
 
   it('renders with the default props', () => {
-    const wrapper = shallow(<Login handleShowSignup={() => {}} />);
+    const wrapper = shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);
