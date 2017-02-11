@@ -1,6 +1,10 @@
+// Let's make the examples visually pleasing
+import 'bulma/css/bulma.css';
+
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Wrapper from '../components/Wrapper';
+
 
 storiesOf('React signup login component', module)
   .add('to default wrapper', () => (
