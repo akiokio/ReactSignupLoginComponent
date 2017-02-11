@@ -11,7 +11,7 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-react": "6.9.0",
     "react-addons-test-utils": "15.4.2",
-    "react-scripts": "0.8.5"
+    "react-scripts": "0.9.0"
   },
   "dependencies": {
     "normalize.css": "^5.0.0",
@@ -22,6 +22,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/**/*.jsx --collectCoverageFrom=!src/stories/*.jsx",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
