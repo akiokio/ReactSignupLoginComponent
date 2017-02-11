@@ -62,7 +62,7 @@ const Signup = ({ handleShowLogin }) => (
         placeholder="Confirm password"
       />
     </div>
-    <div style={Object.assign(styles.buttonsWrapper)}>
+    <div style={styles.buttonsWrapper}>
       <button
         id="login-button"
         style={styles.button}

@@ -55,7 +55,7 @@ const Login = ({ handleShowSignup }) => (
         placeholder="Password"
       />
     </div>
-    <div style={Object.assign(styles.buttonsWrapper)}>
+    <div style={styles.buttonsWrapper}>
       <p id="recorver-password" style={styles.recoverPassword}>Recover Password</p>
       <button
         id="signup-button"

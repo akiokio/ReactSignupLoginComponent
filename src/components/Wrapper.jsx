@@ -37,7 +37,7 @@ class Wrapper extends React.Component {
         maxWidth: '500px',
 
         width: 500,
-        height: 400,
+        height: 340,
         perspective: 1000,
       },
       title: {
@@ -57,9 +57,9 @@ class Wrapper extends React.Component {
         <h1 style={styles.title}>{this.props.title}</h1>
         <div style={styles.flipper}>
           { this.state.isLogin
-              ? <Login key="login-form" handleShowSignup={this.updateState} />
-              : <Signup key="signup-form" handleShowLogin={this.updateState} />
-            }
+            ? <Login key="login-form" handleShowSignup={this.updateState} />
+            : <Signup key="signup-form" handleShowLogin={this.updateState} />
+          }
         </div>
       </section>
     );
