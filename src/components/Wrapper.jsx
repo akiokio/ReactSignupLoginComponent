@@ -23,6 +23,9 @@ const styles = {
   form: {
     width: '100%',
   },
+  flip: {
+    transition: '.6s ease-in',
+  },
 };
 
 class Wrapper extends React.Component {
@@ -38,9 +41,7 @@ class Wrapper extends React.Component {
   }
 
   updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
+    this.setState({ [key]: value });
   }
 
   render() {
@@ -49,7 +50,8 @@ class Wrapper extends React.Component {
         <h1>{this.props.title}</h1>
         { this.state.isLogin
           ? <Login handleShowSignup={this.updateState} />
-          : <Signup /> }
+          : <Signup handleShowLogin={this.updateState} />
+        }
       </section>
     );
   }

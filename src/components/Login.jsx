@@ -24,18 +24,34 @@ const styles = {
   },
   button: {
     margin: '0 15px',
+    padding: 15,
   },
 };
 
 const Login = ({ handleShowSignup }) => (
   <section id="login-form" style={styles.wrapper}>
     <div style={Object.assign(styles.inputWrapper, styles.wrapper)}>
-      <input style={styles.input} type="text" id="username" name="username" placeholder="username" />
-      <input style={styles.input} type="password" id="password" name="password" placeholder="password" />
+      <input
+        style={styles.input}
+        type="text"
+        id="username"
+        name="username"placeholder="Username"
+      />
+      <input
+        style={styles.input}
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+      />
     </div>
     <div style={Object.assign(styles.buttonsWrapper, styles.wrapper)}>
       <p id="recorver-password" style={styles.recoverPassword}>Recover Password</p>
-      <button id="signup-button" style={styles.button} onClick={() => { handleShowSignup('isLogin', false) }}>Signup</button>
+      <button
+        id="signup-button"
+        style={styles.button}
+        onClick={() => { handleShowSignup('isLogin', false); }}
+      >Signup</button>
       <input type="submit" value="Login" style={styles.button} />
     </div>
   </section>

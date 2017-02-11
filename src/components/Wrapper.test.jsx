@@ -31,20 +31,26 @@ describe('the main wrapper', () => {
   });
 
   it('renders with the login component by default', () => {
-    const wrapper = mount(<Wrapper />);
+    const wrapper = shallow(<Wrapper />);
     expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('render with the signup form if the isLogin equals false', () => {
     const wrapper = shallow(<Wrapper isLogin={false} />);
-    expect(wrapper.contains(<Signup />)).toEqual(true);
+    expect(wrapper.find(Signup)).toHaveLength(1);
   });
 
   it('show the signup component on the signup button click', () => {
     const wrapper = mount(<Wrapper />);
-    const signupContainer = <Signup />;
     wrapper.find('#signup-button').simulate('click');
     expect(wrapper.state().isLogin).toEqual(false);
-    expect(wrapper.contains(signupContainer)).toEqual(true);
+    expect(wrapper.find(Signup)).toHaveLength(1);
+  });
+
+  it('show the login component on the login button click', () => {
+    const wrapper = mount(<Wrapper isLogin={false} />);
+    wrapper.find('#login-button').simulate('click');
+    expect(wrapper.state().isLogin).toEqual(true);
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 });
