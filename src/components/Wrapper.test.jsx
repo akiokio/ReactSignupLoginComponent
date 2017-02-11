@@ -12,15 +12,8 @@ describe('the main wrapper', () => {
   });
 
   it('renders the default skeleton', () => {
-    const title = <h1>Company Name</h1>;
     const wrapper = shallow(<Wrapper />);
-    expect(wrapper.contains(title)).toEqual(true);
-  });
-
-  it('renders the a custom title', () => {
-    const title = 'My Company Name';
-    const wrapper = shallow(<Wrapper title={title} />);
-    expect(wrapper.html()).toContain(`<h1>${title}</h1>`);
+    expect(wrapper.find('h1')).toHaveLength(1);
   });
 
   it('initialize with the default state', () => {

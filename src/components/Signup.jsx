@@ -2,20 +2,29 @@ import React from 'react';
 
 const styles = {
   wrapper: {
+    backfaceVisibility: 'hidden',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    transform: 'rotateY(180deg)',
+    width: 500,
+    height: 300,
+  },
+  inputWrapper: {
     display: 'flex',
     flexFlow: 'row wrap',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  inputWrapper: {
-    width: '100%',
-  },
   buttonsWrapper: {
-    width: '100%',
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   input: {
-    width: '60%',
-    height: '40px',
+    width: 344,
+    height: 40,
     margin: '15px 0',
   },
   recoverPassword: {
@@ -30,7 +39,7 @@ const styles = {
 
 const Signup = ({ handleShowLogin }) => (
   <section style={styles.wrapper}>
-    <div id="fields" style={Object.assign(styles.inputWrapper, styles.wrapper)}>
+    <div id="fields" style={styles.inputWrapper}>
       <input
         style={styles.input}
         type="text"
@@ -53,7 +62,7 @@ const Signup = ({ handleShowLogin }) => (
         placeholder="Confirm password"
       />
     </div>
-    <div style={Object.assign(styles.buttonsWrapper, styles.wrapper)}>
+    <div style={Object.assign(styles.buttonsWrapper)}>
       <button
         id="login-button"
         style={styles.button}
