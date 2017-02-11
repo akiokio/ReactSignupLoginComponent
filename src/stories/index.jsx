@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf, linkTo } from '@kadira/storybook';
+import { storiesOf } from '@kadira/storybook';
 import Wrapper from '../components/Wrapper';
 
 

@@ -37,37 +37,37 @@ const localStyles = {
 };
 
 const Signup = ({ handleShowLogin, styles }) => (
-  <section style={Object.assign(localStyles.wrapper, styles.wrapper)}>
-    <div id="fields" style={Object.assign(localStyles.inputWrapper, styles.inputWrapper)}>
+  <section style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
+    <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
-        style={Object.assign(localStyles.input, styles.input)}
+        style={Object.assign({}, localStyles.input, styles.input)}
         type="text"
         id="username"
         name="username"
         placeholder="Username"
       />
       <input
-        style={Object.assign(localStyles.input, styles.input)}
+        style={Object.assign({}, localStyles.input, styles.input)}
         type="password"
         id="password"
         name="password"
         placeholder="Password"
       />
       <input
-        style={Object.assign(localStyles.input, styles.input)}
+        style={Object.assign({}, localStyles.input, styles.input)}
         type="password"
         id="passwordConfirmation"
         name="passwordConfirmation"
         placeholder="Confirm password"
       />
     </div>
-    <div style={Object.assign(localStyles.buttonsWrapper, styles.buttonsWrapper)}>
+    <div style={Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper)}>
       <button
         id="login-button"
-        style={Object.assign(localStyles.button, styles.button)}
+        style={Object.assign({}, localStyles.button, styles.button)}
         onClick={() => { handleShowLogin('isLogin', true); }}
       >Login</button>
-      <input type="submit" value="Signup" style={Object.assign(localStyles.button, styles.button)} />
+      <input type="submit" value="Signup" style={Object.assign({}, localStyles.button, styles.button)} />
     </div>
   </section>
 );
