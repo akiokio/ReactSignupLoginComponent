@@ -37,7 +37,7 @@ class Wrapper extends React.Component {
         maxWidth: '500px',
 
         width: 500,
-        height: 340,
+        height: 400,
         perspective: 1000,
       },
       title: {
