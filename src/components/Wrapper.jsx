@@ -28,6 +28,7 @@ const styles = {
 class Wrapper extends React.Component {
   constructor(props) {
     super(props);
+    this.updateState = this.updateState.bind(this);
 
     this.state = {
       isLogin: this.props.isLogin,
@@ -35,11 +36,20 @@ class Wrapper extends React.Component {
       password: '',
     };
   }
+
+  updateState(key, value) {
+    this.setState({
+      [key]: value,
+    });
+  }
+
   render() {
     return (
       <section style={styles.wrapper}>
         <h1>{this.props.title}</h1>
-        { this.props.isLogin ? <Login /> : <Signup /> }
+        { this.state.isLogin
+          ? <Login handleShowSignup={this.updateState} />
+          : <Signup /> }
       </section>
     );
   }

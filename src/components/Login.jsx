@@ -27,22 +27,22 @@ const styles = {
   },
 };
 
-const Login = ({}) => (
-  <section style={styles.wrapper}>
+const Login = ({ handleShowSignup }) => (
+  <section id="login-form" style={styles.wrapper}>
     <div style={Object.assign(styles.inputWrapper, styles.wrapper)}>
       <input style={styles.input} type="text" id="username" name="username" placeholder="username" />
       <input style={styles.input} type="password" id="password" name="password" placeholder="password" />
     </div>
     <div style={Object.assign(styles.buttonsWrapper, styles.wrapper)}>
       <p id="recorver-password" style={styles.recoverPassword}>Recover Password</p>
-      <button style={styles.button}>Signup</button>
+      <button id="signup-button" style={styles.button} onClick={() => { handleShowSignup('isLogin', false) }}>Signup</button>
       <input type="submit" value="Login" style={styles.button} />
     </div>
   </section>
 );
 
 Login.propTypes = {
-
+  handleShowSignup: React.PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
