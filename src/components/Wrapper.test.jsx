@@ -173,6 +173,6 @@ describe('the main wrapper', () => {
     />);
     wrapper.setState(loginValues);
     wrapper.find('#submit-login').simulate('click');
-    expect(loginCallback.mock.calls[0][0]).toEqual(signupValues);
+    expect(loginCallback.mock.calls[0][0]).toEqual(loginValues);
   });
 });
