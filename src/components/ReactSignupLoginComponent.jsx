@@ -7,7 +7,7 @@ import RecoverPassword from './RecoverPassword';
 // Our only css dependency
 import '../../node_modules/normalize.css';
 
-class Wrapper extends React.Component {
+class ReactSignupLoginComponent extends React.Component {
   constructor(props) {
     super(props);
     this.updateState = this.updateState.bind(this);
@@ -118,7 +118,7 @@ class Wrapper extends React.Component {
   }
 }
 
-Wrapper.propTypes = {
+ReactSignupLoginComponent.propTypes = {
   title: React.PropTypes.string,
   isLogin: React.PropTypes.bool,
   isRecoveringPassword: React.PropTypes.bool,
@@ -156,7 +156,7 @@ Wrapper.propTypes = {
   handleRecoverPassword: React.PropTypes.func.isRequired,
 };
 
-Wrapper.defaultProps = {
+ReactSignupLoginComponent.defaultProps = {
   title: 'Company Name',
   isLogin: true,
   isRecoveringPassword: false,
@@ -164,4 +164,4 @@ Wrapper.defaultProps = {
 };
 
 
-export default Wrapper;
+export default ReactSignupLoginComponent;

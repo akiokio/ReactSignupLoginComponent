@@ -2,18 +2,18 @@
 
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
-import Wrapper from '../components/Wrapper';
+import ReactSignupLoginComponent from '../components/ReactSignupLoginComponent';
 
 storiesOf('React signup login component', module)
   .add('to default wrapper', () => (
-    <Wrapper
+    <ReactSignupLoginComponent
       handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
       handleLogin={(data) => { console.log(data); alert('Login callback, see log on the console to see the data.'); }}
       handleRecoverPassword={(data) => { console.log(data); alert('Recover password callback, see log on the console to see the data.'); }}
     />
   ))
   .add('to signup as default', () => (
-    <Wrapper
+    <ReactSignupLoginComponent
       isLogin={false}
       handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
       handleLogin={() => {}}
@@ -21,45 +21,45 @@ storiesOf('React signup login component', module)
     />
   ))
   .add('to signup with custom title', () => (
-    <Wrapper
+    <ReactSignupLoginComponent
       isLogin={false}
       title="My awesome company"
       handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
     />
   ))
   .add('to recover password', () => (
-    <Wrapper isRecoveringPassword />
+    <ReactSignupLoginComponent isRecoveringPassword />
   ))
   .add('to default wrapper with no css', () => (
-    <Wrapper />
+    <ReactSignupLoginComponent />
   ))
   .add('to default wrapper with ugly css on all posible elements', () => (
-    <Wrapper
+    <ReactSignupLoginComponent
       styles={{
-        mainWrapper: { backgroundColor: 'blue' },
+        mainReactSignupLoginComponent: { backgroundColor: 'blue' },
         mainTitle: { color: 'red' },
         flipper: { transition: '0.1s' },
         signup: {
           wrapper: { backgroundColor: 'yellow' },
-          inputWrapper: { backgroundColor: 'AliceBlue' },
-          buttonsWrapper: { backgroundColor: 'Aqua' },
+          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
+          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
           recoverPassword: {},
           button: { backgroundColor: 'LightCoral' },
         },
         login: {
           wrapper: { backgroundColor: 'yellow' },
-          inputWrapper: { backgroundColor: 'AliceBlue' },
-          buttonsWrapper: { backgroundColor: 'Aqua' },
+          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
+          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
-          recoverPasswordWrapper: { backgroundColor: 'MediumBlue' },
+          recoverPasswordReactSignupLoginComponent: { backgroundColor: 'MediumBlue' },
           recoverPasswordButton: { backgroundColor: 'OldLace ' },
           button: { backgroundColor: 'LightCoral' },
         },
         recoverPassword: {
           wrapper: { backgroundColor: 'yellow' },
-          inputWrapper: { backgroundColor: 'AliceBlue' },
-          buttonsWrapper: { backgroundColor: 'Aqua' },
+          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
+          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
           button: { backgroundColor: 'LightCoral' },
         },
