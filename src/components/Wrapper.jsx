@@ -11,17 +11,27 @@ class Wrapper extends React.Component {
   constructor(props) {
     super(props);
     this.updateState = this.updateState.bind(this);
+    this.bubleUpSignup = this.bubleUpSignup.bind(this);
 
     this.state = {
       isLogin: this.props.isLogin,
       isRecoveringPassword: this.props.isRecoveringPassword,
       username: '',
       password: '',
+      passwordConfirmation: '',
     };
   }
 
   updateState(key, value) {
     this.setState({ [key]: value });
+  }
+
+  bubleUpSignup() {
+    this.props.handleSignup({
+      username: this.state.username,
+      password: this.state.password,
+      passwordConfirmation: this.state.passwordConfirmation,
+    });
   }
 
   render() {
@@ -63,6 +73,7 @@ class Wrapper extends React.Component {
           key="signup-form"
           handleShowLogin={this.updateState}
           styles={this.props.styles.signup}
+          handleSignup={this.bubleUpSignup}
         />);
       }
       return (<RecoverPassword
@@ -114,6 +125,9 @@ Wrapper.propTypes = {
       button: React.PropTypes.object,
     }),
   }),
+  handleSignup: React.PropTypes.func.isRequired,
+  handleLogin: React.PropTypes.func.isRequired,
+  handleRecoverPassword: React.PropTypes.func.isRequired,
 };
 
 Wrapper.defaultProps = {

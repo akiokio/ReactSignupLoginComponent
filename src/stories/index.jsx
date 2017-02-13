@@ -1,17 +1,22 @@
+/* global alert */
+
 import React from 'react';
 import { storiesOf } from '@kadira/storybook';
 import Wrapper from '../components/Wrapper';
 
-
 storiesOf('React signup login component', module)
   .add('to default wrapper', () => (
-    <Wrapper />
+    <Wrapper
+      handleSignup={() => {}}
+      handleLogin={() => {}}
+      handleRecoverPassword={() => {}}
+    />
   ))
   .add('to signup as default', () => (
-    <Wrapper isLogin={false} />
+    <Wrapper isLogin={false} handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }} />
   ))
   .add('to signup with custom title', () => (
-    <Wrapper isLogin={false} title={'My awesome company'} />
+    <Wrapper isLogin={false} title={'My awesome company'} handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }} />
   ))
   .add('to recover password', () => (
     <Wrapper isRecoveringPassword />
