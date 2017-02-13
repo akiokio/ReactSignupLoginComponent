@@ -9,7 +9,7 @@ storiesOf('React signup login component', module)
     <Wrapper
       handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
       handleLogin={(data) => { console.log(data); alert('Login callback, see log on the console to see the data.'); }}
-      handleRecoverPassword={() => {}}
+      handleRecoverPassword={(data) => { console.log(data); alert('Recover password callback, see log on the console to see the data.'); }}
     />
   ))
   .add('to signup as default', () => (

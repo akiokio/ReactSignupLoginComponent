@@ -32,7 +32,7 @@ const localStyles = {
   },
 };
 
-const RecoverPassword = ({ handleShowLogin, styles, handleChange }) => (
+const RecoverPassword = ({ handleShowLogin, styles, handleChange, handleRecoverPassword }) => (
   <section id="recover-password-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
@@ -50,7 +50,14 @@ const RecoverPassword = ({ handleShowLogin, styles, handleChange }) => (
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={() => { handleShowLogin('isRecoveringPassword', false); }}
       >Login</button>
-      <input type="submit" value="Recover" style={Object.assign({}, localStyles.button, styles.button)} />
+      <input
+        id="submit-recover-password"
+        name="submit-recover-password"
+        type="submit"
+        value="Recover"
+        style={Object.assign({}, localStyles.button, styles.button)}
+        onClick={handleRecoverPassword}
+      />
     </div>
   </section>
 );
@@ -58,6 +65,7 @@ const RecoverPassword = ({ handleShowLogin, styles, handleChange }) => (
 RecoverPassword.propTypes = {
   handleShowLogin: React.PropTypes.func.isRequired,
   handleChange: React.PropTypes.func.isRequired,
+  handleRecoverPassword: React.PropTypes.func.isRequired,
   styles: React.PropTypes.shape({
     wrapper: React.PropTypes.object,
     inputWrapper: React.PropTypes.object,

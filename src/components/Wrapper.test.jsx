@@ -103,6 +103,18 @@ describe('the main wrapper', () => {
     expect(loginCallback.mock.calls.length).toEqual(1);
   });
 
+  it('should call handle recover password when submit-recover-password clicked', () => {
+    const recoverCallback = jest.fn();
+    const wrapper = mount(<Wrapper
+      isRecoveringPassword
+      handleSignup={jest.fn()}
+      handleLogin={jest.fn()}
+      handleRecoverPassword={recoverCallback}
+    />);
+    wrapper.find('#submit-recover-password').simulate('click');
+    expect(recoverCallback.mock.calls.length).toEqual(1);
+  });
+
   it('should attach the login inputs to the state', () => {
     const wrapper = mount(<Wrapper {...requiredMockProps} />);
     const usernameInput = wrapper.find('#login-form input[name="username"]');
@@ -174,5 +186,21 @@ describe('the main wrapper', () => {
     wrapper.setState(loginValues);
     wrapper.find('#submit-login').simulate('click');
     expect(loginCallback.mock.calls[0][0]).toEqual(loginValues);
+  });
+
+  it('should return the username on the recover password callback', () => {
+    const recoverPasswordCallback = jest.fn();
+    const recoverPasswordValues = {
+      username: 'johndoeForgot',
+    };
+    const wrapper = mount(<Wrapper
+      isRecoveringPassword
+      handleSignup={jest.fn()}
+      handleLogin={jest.fn()}
+      handleRecoverPassword={recoverPasswordCallback}
+    />);
+    wrapper.setState(recoverPasswordValues);
+    wrapper.find('#submit-recover-password').simulate('click');
+    expect(recoverPasswordCallback.mock.calls[0][0]).toEqual(recoverPasswordValues);
   });
 });
