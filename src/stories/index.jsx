@@ -36,30 +36,30 @@ storiesOf('React signup login component', module)
   .add('to default wrapper with ugly css on all posible elements', () => (
     <ReactSignupLoginComponent
       styles={{
-        mainReactSignupLoginComponent: { backgroundColor: 'blue' },
+        mainWrapper: { backgroundColor: 'blue' },
         mainTitle: { color: 'red' },
         flipper: { transition: '0.1s' },
         signup: {
           wrapper: { backgroundColor: 'yellow' },
-          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
-          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
           recoverPassword: {},
           button: { backgroundColor: 'LightCoral' },
         },
         login: {
           wrapper: { backgroundColor: 'yellow' },
-          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
-          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
-          recoverPasswordReactSignupLoginComponent: { backgroundColor: 'MediumBlue' },
+          recoverPasswordWrapper: { backgroundColor: 'MediumBlue' },
           recoverPasswordButton: { backgroundColor: 'OldLace ' },
           button: { backgroundColor: 'LightCoral' },
         },
         recoverPassword: {
           wrapper: { backgroundColor: 'yellow' },
-          inputReactSignupLoginComponent: { backgroundColor: 'AliceBlue' },
-          buttonsReactSignupLoginComponent: { backgroundColor: 'Aqua' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
           input: { backgroundColor: 'LavenderBlush' },
           button: { backgroundColor: 'LightCoral' },
         },
