@@ -36,8 +36,8 @@ const localStyles = {
   },
 };
 
-const Signup = ({ handleShowLogin, styles, handleSignup }) => (
-  <section style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
+const Signup = ({ handleShowLogin, styles, handleSignup, handleChange }) => (
+  <section id="signup-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
@@ -45,6 +45,7 @@ const Signup = ({ handleShowLogin, styles, handleSignup }) => (
         id="username"
         name="username"
         placeholder="Username"
+        onChange={e => handleChange(e.target.name, e.target.value)}
       />
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
@@ -52,6 +53,7 @@ const Signup = ({ handleShowLogin, styles, handleSignup }) => (
         id="password"
         name="password"
         placeholder="Password"
+        onChange={e => handleChange(e.target.name, e.target.value)}
       />
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
@@ -59,6 +61,7 @@ const Signup = ({ handleShowLogin, styles, handleSignup }) => (
         id="passwordConfirmation"
         name="passwordConfirmation"
         placeholder="Confirm password"
+        onChange={e => handleChange(e.target.name, e.target.value)}
       />
     </div>
     <div style={Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper)}>
@@ -81,6 +84,7 @@ const Signup = ({ handleShowLogin, styles, handleSignup }) => (
 Signup.propTypes = {
   handleShowLogin: React.PropTypes.func.isRequired,
   handleSignup: React.PropTypes.func.isRequired,
+  handleChange: React.PropTypes.func.isRequired,
   styles: React.PropTypes.shape({
     wrapper: React.PropTypes.object,
     inputWrapper: React.PropTypes.object,

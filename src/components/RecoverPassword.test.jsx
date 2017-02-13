@@ -1,17 +1,21 @@
-/* global it, expect, describe */
+/* global it, expect, describe, jest */
 
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import RecoverPassword from './RecoverPassword';
-import Login from './login';
+import Login from './Login';
 
 describe('the main wrapper', () => {
+  const requiredMockProps = {
+    handleShowLogin: jest.fn(),
+    handleChange: jest.fn(),
+  };
   it('renders without crashing', () => {
-    shallow(<RecoverPassword handleShowLogin={() => {}} />);
+    shallow(<RecoverPassword {...requiredMockProps} />);
   });
 
   it('renders the basic structure', () => {
-    const wrapper = shallow(<RecoverPassword handleShowLogin={() => {}} />);
+    const wrapper = shallow(<RecoverPassword {...requiredMockProps} />);
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('#login-button')).toHaveLength(1);
   });

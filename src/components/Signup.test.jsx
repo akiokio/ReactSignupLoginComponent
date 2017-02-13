@@ -5,12 +5,17 @@ import { shallow } from 'enzyme';
 import Signup from './Signup';
 
 describe('the signup form', () => {
+  const requiredMockProps = {
+    handleShowLogin: jest.fn(),
+    handleSignup: jest.fn(),
+    handleChange: jest.fn(),
+  };
   it('renders without crashing', () => {
-    shallow(<Signup handleShowLogin={jest.fn()} handleSignup={jest.fn()} />);
+    shallow(<Signup {...requiredMockProps} />);
   });
 
   it('renders the input fields', () => {
-    const form = shallow(<Signup handleShowLogin={jest.fn()} handleSignup={jest.fn()} />);
+    const form = shallow(<Signup {...requiredMockProps} />);
     expect(form.find('input[name="username"]')).toHaveLength(1);
     expect(form.find('input[name="password"]')).toHaveLength(1);
     expect(form.find('input[name="passwordConfirmation"]')).toHaveLength(1);
@@ -23,6 +28,7 @@ describe('the signup form', () => {
     const wrapper = shallow(<Signup
       handleShowLogin={jest.fn()}
       handleSignup={signupCallback}
+      handleChange={jest.fn()}
     />);
     wrapper.find('#submit-signup').simulate('click');
     expect(signupCallback.mock.calls.length).toEqual(1);

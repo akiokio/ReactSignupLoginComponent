@@ -5,12 +5,17 @@ import { shallow } from 'enzyme';
 import Login from './Login';
 
 describe('the login form', () => {
+  const requiredMockProps = {
+    handleShowSignup: () => {},
+    handleShowRecover: () => {},
+    handleChange: () => {},
+  };
   it('renders without crashing', () => {
-    shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
+    shallow(<Login {...requiredMockProps} />);
   });
 
   it('renders the default skeleton', () => {
-    const wrapper = shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
+    const wrapper = shallow(<Login {...requiredMockProps} />);
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);
@@ -19,7 +24,7 @@ describe('the login form', () => {
   });
 
   it('renders with the default props', () => {
-    const wrapper = shallow(<Login handleShowSignup={() => {}} handleShowRecover={() => {}} />);
+    const wrapper = shallow(<Login {...requiredMockProps} />);
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);

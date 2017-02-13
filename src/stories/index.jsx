@@ -13,7 +13,12 @@ storiesOf('React signup login component', module)
     />
   ))
   .add('to signup as default', () => (
-    <Wrapper isLogin={false} handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }} />
+    <Wrapper
+      isLogin={false}
+      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
+      handleLogin={() => {}}
+      handleRecoverPassword={() => {}}
+    />
   ))
   .add('to signup with custom title', () => (
     <Wrapper isLogin={false} title={'My awesome company'} handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }} />

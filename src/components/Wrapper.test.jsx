@@ -70,7 +70,7 @@ describe('the main wrapper', () => {
     const wrapper = mount(<Wrapper {...requiredMockProps} />);
     wrapper.find('#recorver-password').simulate('click');
     expect(wrapper.state().isRecoveringPassword).toEqual(true);
-    expect(wrapper.find('#recovering-password')).toHaveLength(1);
+    expect(wrapper.find('#recover-password-form')).toHaveLength(1);
   });
 
   it('show the login component on the login button click on recover password', () => {
@@ -90,6 +90,45 @@ describe('the main wrapper', () => {
     />);
     wrapper.find('#submit-signup').simulate('click');
     expect(signupCallback.mock.calls.length).toEqual(1);
+  });
+
+  it('should attach the login inputs to the state', () => {
+    const wrapper = mount(<Wrapper {...requiredMockProps} />);
+    const usernameInput = wrapper.find('#login-form input[name="username"]');
+    usernameInput.node.value = 'john123';
+    usernameInput.simulate('change', usernameInput);
+    expect(wrapper.state().username).toEqual('john123');
+
+    const passwordInput = wrapper.find('#login-form input[name="password"]');
+    passwordInput.node.value = 'themonkeyatethebanana';
+    passwordInput.simulate('change', passwordInput);
+    expect(wrapper.state().password).toEqual('themonkeyatethebanana');
+  });
+
+  it('should attach the signup inputs to the state', () => {
+    const wrapper = mount(<Wrapper isLogin={false} {...requiredMockProps} />);
+    const usernameInput = wrapper.find('#signup-form input[name="username"]');
+    usernameInput.node.value = 'johnSignup123';
+    usernameInput.simulate('change', usernameInput);
+    expect(wrapper.state().username).toEqual('johnSignup123');
+
+    const passwordInput = wrapper.find('#signup-form input[name="password"]');
+    passwordInput.node.value = 'themonkeyatethebananaonsignup';
+    passwordInput.simulate('change', passwordInput);
+    expect(wrapper.state().password).toEqual('themonkeyatethebananaonsignup');
+
+    const passConfirmInput = wrapper.find('#signup-form input[name="passwordConfirmation"]');
+    passConfirmInput.node.value = 'themonkeyatethebananaonsignup';
+    passConfirmInput.simulate('change', passConfirmInput);
+    expect(wrapper.state().password).toEqual('themonkeyatethebananaonsignup');
+  });
+
+  it('should attach the recorver password input to the state', () => {
+    const wrapper = mount(<Wrapper isRecoveringPassword {...requiredMockProps} />);
+    const usernameInput = wrapper.find('#recover-password-form input[name="username"]');
+    usernameInput.node.value = 'john123';
+    usernameInput.simulate('change', usernameInput);
+    expect(wrapper.state().username).toEqual('john123');
   });
 
   it('should return the username, password and password confirmation on the singup callback', () => {

@@ -46,14 +46,16 @@ const localStyles = {
   },
 };
 
-const Login = ({ handleShowSignup, handleShowRecover, styles }) => (
+const Login = ({ handleShowSignup, handleShowRecover, styles, handleChange }) => (
   <section id="login-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
         type="text"
         id="username"
-        name="username"placeholder="Username"
+        name="username"
+        placeholder="Username"
+        onChange={e => handleChange(e.target.name, e.target.value)}
       />
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
@@ -61,10 +63,13 @@ const Login = ({ handleShowSignup, handleShowRecover, styles }) => (
         id="password"
         name="password"
         placeholder="Password"
+        onChange={e => handleChange(e.target.name, e.target.value)}
       />
     </div>
     <div style={Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper)}>
-      <div style={Object.assign({}, localStyles.recoverPasswordWrapper, styles.recoverPasswordWrapper)}>
+      <div
+        style={Object.assign({}, localStyles.recoverPasswordWrapper, styles.recoverPasswordWrapper)}
+      >
         <button
           id="recorver-password"
           style={Object.assign({}, localStyles.recoverPassword, styles.recoverPasswordButton)}
@@ -84,6 +89,7 @@ const Login = ({ handleShowSignup, handleShowRecover, styles }) => (
 Login.propTypes = {
   handleShowSignup: React.PropTypes.func.isRequired,
   handleShowRecover: React.PropTypes.func.isRequired,
+  handleChange: React.PropTypes.func.isRequired,
   styles: React.PropTypes.shape({
     wrapper: React.PropTypes.object,
     inputWrapper: React.PropTypes.object,

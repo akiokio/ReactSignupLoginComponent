@@ -67,6 +67,7 @@ class Wrapper extends React.Component {
           handleShowSignup={this.updateState}
           handleShowRecover={this.updateState}
           styles={this.props.styles.login}
+          handleChange={this.updateState}
         />);
       } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
         return (<Signup
@@ -74,10 +75,12 @@ class Wrapper extends React.Component {
           handleShowLogin={this.updateState}
           styles={this.props.styles.signup}
           handleSignup={this.bubleUpSignup}
+          handleChange={this.updateState}
         />);
       }
       return (<RecoverPassword
         handleShowLogin={this.updateState}
+        handleChange={this.updateState}
         styles={this.props.styles.recoverPassword}
       />);
     };
