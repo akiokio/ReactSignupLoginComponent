@@ -9,6 +9,9 @@ describe('the signup form', () => {
     handleShowLogin: jest.fn(),
     handleSignup: jest.fn(),
     handleChange: jest.fn(),
+    username: '',
+    password: '',
+    passwordConfirmation: '',
   };
   it('renders without crashing', () => {
     shallow(<Signup {...requiredMockProps} />);
@@ -29,6 +32,9 @@ describe('the signup form', () => {
       handleShowLogin={jest.fn()}
       handleSignup={signupCallback}
       handleChange={jest.fn()}
+      username=""
+      password=""
+      passwordConfirmation=""
     />);
     wrapper.find('#submit-signup').simulate('click');
     expect(signupCallback.mock.calls.length).toEqual(1);

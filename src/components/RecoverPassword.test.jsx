@@ -10,6 +10,7 @@ describe('the main wrapper', () => {
     handleShowLogin: jest.fn(),
     handleChange: jest.fn(),
     handleRecoverPassword: jest.fn(),
+    username: '',
   };
   it('renders without crashing', () => {
     shallow(<RecoverPassword {...requiredMockProps} />);

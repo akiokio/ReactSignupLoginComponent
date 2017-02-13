@@ -10,6 +10,8 @@ describe('the login form', () => {
     handleShowRecover: jest.fn(),
     handleLogin: jest.fn(),
     handleChange: jest.fn(),
+    username: '',
+    password: '',
   };
   it('renders without crashing', () => {
     shallow(<Login {...requiredMockProps} />);
@@ -38,6 +40,8 @@ describe('the login form', () => {
       handleLogin={loginCallback}
       handleShowRecover={jest.fn()}
       handleChange={jest.fn()}
+      username=""
+      password=""
     />);
     wrapper.find('#submit-login').simulate('click');
     expect(loginCallback.mock.calls.length).toEqual(1);

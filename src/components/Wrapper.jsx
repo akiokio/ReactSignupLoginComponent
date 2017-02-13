@@ -84,6 +84,8 @@ class Wrapper extends React.Component {
           styles={this.props.styles.login}
           handleLogin={this.bubleUpLogin}
           handleChange={this.updateState}
+          username={this.state.username}
+          password={this.state.password}
         />);
       } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
         return (<Signup
@@ -92,6 +94,9 @@ class Wrapper extends React.Component {
           styles={this.props.styles.signup}
           handleSignup={this.bubleUpSignup}
           handleChange={this.updateState}
+          username={this.state.username}
+          password={this.state.password}
+          passwordConfirmation={this.state.passwordConfirmation}
         />);
       }
       return (<RecoverPassword
@@ -99,6 +104,7 @@ class Wrapper extends React.Component {
         handleRecoverPassword={this.bubleUpRecoverPassword}
         handleChange={this.updateState}
         styles={this.props.styles.recoverPassword}
+        username={this.state.username}
       />);
     };
     return (
