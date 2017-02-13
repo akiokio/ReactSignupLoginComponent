@@ -1,9 +1,9 @@
 # ReactSignupLoginComponent
-======
+[![codecov](https://codecov.io/gh/akiokio/ReactSignupLoginComponent/branch/master/graph/badge.svg)](https://codecov.io/gh/akiokio/ReactSignupLoginComponent)
+
 Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) to learn how to use it.
 
 ## Features
-------
 - Login
 - Signup
 - Recover Password
@@ -12,7 +12,6 @@ Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) t
 - Drop-in component
 
 ## How to use it
-------
 
 ### Installing
 Using npm:
@@ -58,7 +57,6 @@ export default LoginPage;
 ```
 
 ## Configuration (Props) options
-------
 
 ### Required props
 ### `handleSignup(object)`
@@ -143,7 +141,6 @@ You can overhide the component style passing an object to the styles prop. Here'
 ```
 
 ## Tests
-------
 We have a 100% percent test coverage, to run the tests locally:
 ```js
 $ git clone https://github.com/akiokio/ReactSignupLoginComponent
@@ -155,13 +152,10 @@ $ yarn coverage
 ```
 
 ## Issues
-------
 If you found something wrong with the component please open an issue here: [https://github.com/akiokio/ReactSignupLoginComponent/issues/new](https://github.com/akiokio/ReactSignupLoginComponent/issues/new)
 
 ## Notes
-------
 This readme is a working in progress, feel free to help update it making a pull request
 
 ## License
-------
 Licensed under the MIT License: https://opensource.org/licenses/MIT
