@@ -46,7 +46,7 @@ const localStyles = {
   },
 };
 
-const Login = ({ handleShowSignup, handleShowRecover, styles, handleChange }) => (
+const Login = ({ handleShowSignup, handleShowRecover, styles, handleLogin, handleChange }) => (
   <section id="login-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
@@ -81,7 +81,14 @@ const Login = ({ handleShowSignup, handleShowRecover, styles, handleChange }) =>
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={() => { handleShowSignup('isLogin', false); }}
       >Signup</button>
-      <input type="submit" value="Login" style={Object.assign({}, localStyles.button, styles.button)} />
+      <input
+        id="submit-login"
+        name="submit-login"
+        type="submit"
+        value="Login"
+        style={Object.assign({}, localStyles.button, styles.button)}
+        onClick={handleLogin}
+      />
     </div>
   </section>
 );
@@ -89,6 +96,7 @@ const Login = ({ handleShowSignup, handleShowRecover, styles, handleChange }) =>
 Login.propTypes = {
   handleShowSignup: React.PropTypes.func.isRequired,
   handleShowRecover: React.PropTypes.func.isRequired,
+  handleLogin: React.PropTypes.func.isRequired,
   handleChange: React.PropTypes.func.isRequired,
   styles: React.PropTypes.shape({
     wrapper: React.PropTypes.object,

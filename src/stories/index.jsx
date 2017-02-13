@@ -7,8 +7,8 @@ import Wrapper from '../components/Wrapper';
 storiesOf('React signup login component', module)
   .add('to default wrapper', () => (
     <Wrapper
-      handleSignup={() => {}}
-      handleLogin={() => {}}
+      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
+      handleLogin={(data) => { console.log(data); alert('Login callback, see log on the console to see the data.'); }}
       handleRecoverPassword={() => {}}
     />
   ))
@@ -21,7 +21,11 @@ storiesOf('React signup login component', module)
     />
   ))
   .add('to signup with custom title', () => (
-    <Wrapper isLogin={false} title={'My awesome company'} handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }} />
+    <Wrapper
+      isLogin={false}
+      title={'My awesome company'}
+      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
+    />
   ))
   .add('to recover password', () => (
     <Wrapper isRecoveringPassword />
