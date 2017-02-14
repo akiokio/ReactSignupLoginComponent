@@ -1315,14 +1315,14 @@ browserify-zlib@^0.1.4:
   dependencies:
     pako "~0.2.0"
 
-browserslist@^1.0.1, browserslist@^1.4.0, browserslist@^1.5.2, browserslist@^1.7.1:
+browserslist@^1.0.1, browserslist@^1.5.2, browserslist@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-1.7.1.tgz#cc9bd193979a2a4b09fdb3df6003fefe48ccefe1"
   dependencies:
     caniuse-db "^1.0.30000617"
     electron-to-chromium "^1.2.1"
 
-browserslist@~1.4.0:
+browserslist@^1.4.0, browserslist@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-1.4.0.tgz#9cfdcf5384d9158f5b70da2aa00b30e8ff019049"
   dependencies:
@@ -5111,14 +5111,14 @@ react-scripts@0.9.0:
   optionalDependencies:
     fsevents "1.0.17"
 
-react-signup-login-component@^0.1.0, react-signup-login-component@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/react-signup-login-component/-/react-signup-login-component-0.1.2.tgz#a92b01f3b2db787f705fef8245dc94feb6129d77"
+react-signup-login-component@^0.1.2, react-signup-login-component@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/react-signup-login-component/-/react-signup-login-component-0.1.3.tgz#9611c107dfa7a9fcddff5bf8accbc0655df49fad"
   dependencies:
     normalize.css "^5.0.0"
     react "15.4.2"
     react-dom "15.4.2"
-    react-signup-login-component "^0.1.0"
+    react-signup-login-component "^0.1.2"
 
 react-simple-di@^1.2.0:
   version "1.2.0"
