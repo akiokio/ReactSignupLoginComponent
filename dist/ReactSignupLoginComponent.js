@@ -22,7 +22,7 @@ var _RecoverPassword = require('./RecoverPassword');
 
 var _RecoverPassword2 = _interopRequireDefault(_RecoverPassword);
 
-require('../../node_modules/normalize.css');
+require('./normalize.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
