@@ -5111,13 +5111,14 @@ react-scripts@0.9.0:
   optionalDependencies:
     fsevents "1.0.17"
 
-react-signup-login-component@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-signup-login-component/-/react-signup-login-component-0.1.0.tgz#857ed3d6d6f3f1dde2e0954607f451a99d4db86b"
+react-signup-login-component@^0.1.0, react-signup-login-component@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-signup-login-component/-/react-signup-login-component-0.1.2.tgz#a92b01f3b2db787f705fef8245dc94feb6129d77"
   dependencies:
     normalize.css "^5.0.0"
     react "15.4.2"
     react-dom "15.4.2"
+    react-signup-login-component "^0.1.0"
 
 react-simple-di@^1.2.0:
   version "1.2.0"

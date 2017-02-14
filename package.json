@@ -1,12 +1,13 @@
 {
   "name": "react-signup-login-component",
   "version": "0.1.2",
-  "main": "src/components/ReactSignupLoginComponent.jsx",
+  "main": "dist/ReactSignupLoginComponent.jsx",
   "engines": {
     "node": ">=6.0.0"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
+    "babel-preset-react-app": "^2.1.0",
     "coveralls": "^2.11.16",
     "enzyme": "2.7.1",
     "eslint": "3.15.0",
@@ -27,6 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:module": "NODE_ENV=production babel src/components --presets react-app --out-dir dist",
     "test": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/*.js",
     "eject": "react-scripts eject",
