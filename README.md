@@ -1,5 +1,6 @@
 # ReactSignupLoginComponent
 [![codecov](https://codecov.io/gh/akiokio/ReactSignupLoginComponent/branch/master/graph/badge.svg)](https://codecov.io/gh/akiokio/ReactSignupLoginComponent)
+[![Build Status](https://travis-ci.org/akiokio/ReactSignupLoginComponent.svg?branch=master)](https://travis-ci.org/akiokio/ReactSignupLoginComponent)
 
 Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) to learn how to use it.
 
