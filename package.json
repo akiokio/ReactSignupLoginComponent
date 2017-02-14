@@ -2,6 +2,9 @@
   "name": "ReactSignupLoginComponent",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=7.2.1"
+  },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "enzyme": "2.7.1",
