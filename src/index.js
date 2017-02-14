@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSignupLoginComponent from './components/ReactSignupLoginComponent';
+import ReactSignupLoginComponent from 'react-signup-login-component';
 
 import './index.css';
 

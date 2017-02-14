@@ -17,11 +17,11 @@ Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) t
 ### Installing
 Using npm:
 ```javascript
-$ npm install ReactSignupLoginComponent
+$ npm install react-signup-login-component
 ```
 Using yarn:
 ```javascript
-$ yarn add ReactSignupLoginComponent
+$ yarn add react-signup-login-component
 ```
 
 ### Getting started

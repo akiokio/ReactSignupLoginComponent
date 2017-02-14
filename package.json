@@ -21,13 +21,14 @@
   "dependencies": {
     "normalize.css": "^5.0.0",
     "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "react-dom": "15.4.2",
+    "react-signup-login-component": "^0.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/**/*.jsx --collectCoverageFrom=!src/stories/*.jsx",
+    "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/*.js",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public -o build",

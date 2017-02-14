@@ -1,5 +1,5 @@
 TN:
-SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Login.jsx
+SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Login.js
 FN:49,(anonymous_0)
 FN:66,(anonymous_1)
 FN:75,(anonymous_2)
@@ -27,7 +27,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/ReactSignupLoginComponent.jsx
+SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/ReactSignupLoginComponent.js
 FN:11,(anonymous_0)
 FN:27,(anonymous_1)
 FN:31,(anonymous_2)
@@ -82,7 +82,7 @@ BRF:12
 BRH:12
 end_of_record
 TN:
-SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/RecoverPassword.jsx
+SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/RecoverPassword.js
 FN:35,(anonymous_0)
 FN:44,(anonymous_1)
 FN:52,(anonymous_2)
@@ -104,7 +104,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Signup.jsx
+SF:/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Signup.js
 FN:39,(anonymous_0)
 FN:56,(anonymous_1)
 FN:65,(anonymous_2)

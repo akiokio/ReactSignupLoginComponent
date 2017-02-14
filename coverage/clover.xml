@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1487039572677" clover="3.2.0">
-  <project timestamp="1487039572678" name="All files">
+<coverage generated="1487041348486" clover="3.2.0">
+  <project timestamp="1487041348486" name="All files">
     <metrics statements="45" coveredstatements="45" conditionals="12" coveredconditionals="12" methods="20" coveredmethods="20" elements="77" coveredelements="77" complexity="0" loc="45" ncloc="45" packages="1" files="4" classes="4">
-      <file name="Login.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Login.jsx">
+      <file name="Login.js" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Login.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="3" count="3" type="stmt"/>
         <line num="49" count="3" type="stmt"/>
@@ -14,7 +14,7 @@
         <line num="109" count="3" type="stmt"/>
         <line num="127" count="3" type="stmt"/>
       </file>
-      <file name="ReactSignupLoginComponent.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/ReactSignupLoginComponent.jsx">
+      <file name="ReactSignupLoginComponent.js" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/ReactSignupLoginComponent.js">
         <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="7" coveredmethods="7"/>
         <line num="12" count="19" type="stmt"/>
         <line num="13" count="19" type="stmt"/>
@@ -37,7 +37,7 @@
         <line num="121" count="1" type="stmt"/>
         <line num="159" count="1" type="stmt"/>
       </file>
-      <file name="RecoverPassword.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/RecoverPassword.jsx">
+      <file name="RecoverPassword.js" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/RecoverPassword.js">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="3" count="2" type="stmt"/>
         <line num="35" count="2" type="stmt"/>
@@ -47,7 +47,7 @@
         <line num="66" count="2" type="stmt"/>
         <line num="80" count="2" type="stmt"/>
       </file>
-      <file name="Signup.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Signup.jsx">
+      <file name="Signup.js" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Signup.js">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="3" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
