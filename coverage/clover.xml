@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1487017725084" clover="3.2.0">
-  <project timestamp="1487017725084" name="All files">
+<coverage generated="1487039572677" clover="3.2.0">
+  <project timestamp="1487039572678" name="All files">
     <metrics statements="45" coveredstatements="45" conditionals="12" coveredconditionals="12" methods="20" coveredmethods="20" elements="77" coveredelements="77" complexity="0" loc="45" ncloc="45" packages="1" files="4" classes="4">
       <file name="Login.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Login.jsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
@@ -13,6 +13,29 @@
         <line num="95" count="1" type="stmt"/>
         <line num="109" count="3" type="stmt"/>
         <line num="127" count="3" type="stmt"/>
+      </file>
+      <file name="ReactSignupLoginComponent.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/ReactSignupLoginComponent.jsx">
+        <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="7" coveredmethods="7"/>
+        <line num="12" count="19" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
+        <line num="14" count="19" type="stmt"/>
+        <line num="15" count="19" type="stmt"/>
+        <line num="16" count="19" type="stmt"/>
+        <line num="18" count="19" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="53" count="32" type="stmt"/>
+        <line num="78" count="32" type="stmt"/>
+        <line num="79" count="32" type="stmt"/>
+        <line num="80" count="15" type="stmt"/>
+        <line num="90" count="17" type="stmt"/>
+        <line num="91" count="10" type="stmt"/>
+        <line num="102" count="7" type="stmt"/>
+        <line num="110" count="32" type="stmt"/>
+        <line num="121" count="1" type="stmt"/>
+        <line num="159" count="1" type="stmt"/>
       </file>
       <file name="RecoverPassword.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/RecoverPassword.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -35,29 +58,6 @@
         <line num="82" count="1" type="stmt"/>
         <line num="95" count="2" type="stmt"/>
         <line num="112" count="2" type="stmt"/>
-      </file>
-      <file name="Wrapper.jsx" path="/Users/akiokio/Projects/ReactSignupLoginComponent/src/components/Wrapper.jsx">
-        <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="7" coveredmethods="7"/>
-        <line num="12" count="19" type="stmt"/>
-        <line num="13" count="19" type="stmt"/>
-        <line num="14" count="19" type="stmt"/>
-        <line num="15" count="19" type="stmt"/>
-        <line num="16" count="19" type="stmt"/>
-        <line num="18" count="19" type="stmt"/>
-        <line num="28" count="10" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="53" count="32" type="stmt"/>
-        <line num="78" count="32" type="stmt"/>
-        <line num="79" count="32" type="stmt"/>
-        <line num="80" count="15" type="stmt"/>
-        <line num="90" count="17" type="stmt"/>
-        <line num="91" count="10" type="stmt"/>
-        <line num="102" count="7" type="stmt"/>
-        <line num="110" count="32" type="stmt"/>
-        <line num="121" count="1" type="stmt"/>
-        <line num="159" count="1" type="stmt"/>
       </file>
     </metrics>
   </project>
