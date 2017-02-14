@@ -1,9 +1,9 @@
 {
   "name": "react-signup-login-component",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "src/components/ReactSignupLoginComponent.jsx",
   "engines": {
-    "node": ">=7.2.1"
+    "node": ">=6.0.0"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
