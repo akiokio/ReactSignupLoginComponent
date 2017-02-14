@@ -22,7 +22,7 @@
     "normalize.css": "^5.0.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-signup-login-component": "^0.1.0"
+    "react-signup-login-component": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
