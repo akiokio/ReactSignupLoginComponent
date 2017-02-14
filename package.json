@@ -2,7 +2,6 @@
   "name": "ReactSignupLoginComponent",
   "version": "0.1.0",
   "main": "src/components/ReactSignupLoginComponent.jsx",
-  "private": true,
   "engines": {
     "node": ">=7.2.1"
   },
