@@ -26,7 +26,7 @@ $ yarn add react-signup-login-component
 
 ### Getting started
 ```javascript
-import ReactSignupLoginComponent from 'ReactSignupLoginComponent';
+import ReactSignupLoginComponent from 'react-signup-login-component';
 
 const LoginPage = (props) => {
     const signupWasClickedCallback = (data) => {
