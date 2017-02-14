@@ -1,5 +1,5 @@
 {
-  "name": "ReactSignupLoginComponent",
+  "name": "react-signup-login-component",
   "version": "0.1.0",
   "main": "src/components/ReactSignupLoginComponent.jsx",
   "engines": {
