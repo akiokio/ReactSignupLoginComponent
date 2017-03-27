@@ -1,6 +1,6 @@
 {
   "name": "react-signup-login-component",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/ReactSignupLoginComponent.js",
   "engines": {
     "node": ">=6.0.0"
