@@ -132,12 +132,12 @@ describe('the main wrapper', function () {
   it('should attach the login inputs to the state', function () {
     var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
     var usernameInput = wrapper.find('#login-form input[name="username"]');
-    usernameInput.node.value = 'john123';
+    usernameInput.instance().value = 'john123';
     usernameInput.simulate('change', usernameInput);
     expect(wrapper.state().username).toEqual('john123');
 
     var passwordInput = wrapper.find('#login-form input[name="password"]');
-    passwordInput.node.value = 'themonkeyatethebanana';
+    passwordInput.instance().value = 'themonkeyatethebanana';
     passwordInput.simulate('change', passwordInput);
     expect(wrapper.state().password).toEqual('themonkeyatethebanana');
   });
@@ -145,17 +145,17 @@ describe('the main wrapper', function () {
   it('should attach the signup inputs to the state', function () {
     var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isLogin: false }, requiredMockProps)));
     var usernameInput = wrapper.find('#signup-form input[name="username"]');
-    usernameInput.node.value = 'johnSignup123';
+    usernameInput.instance().value = 'johnSignup123';
     usernameInput.simulate('change', usernameInput);
     expect(wrapper.state().username).toEqual('johnSignup123');
 
     var passwordInput = wrapper.find('#signup-form input[name="password"]');
-    passwordInput.node.value = 'themonkeyatethebananaonsignup';
+    passwordInput.instance().value = 'themonkeyatethebananaonsignup';
     passwordInput.simulate('change', passwordInput);
     expect(wrapper.state().password).toEqual('themonkeyatethebananaonsignup');
 
     var passConfirmInput = wrapper.find('#signup-form input[name="passwordConfirmation"]');
-    passConfirmInput.node.value = 'themonkeyatethebananaonsignup';
+    passConfirmInput.instance().value = 'themonkeyatethebananaonsignup';
     passConfirmInput.simulate('change', passConfirmInput);
     expect(wrapper.state().password).toEqual('themonkeyatethebananaonsignup');
   });
@@ -163,7 +163,7 @@ describe('the main wrapper', function () {
   it('should attach the recorver password input to the state', function () {
     var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isRecoveringPassword: true }, requiredMockProps)));
     var usernameInput = wrapper.find('#recover-password-form input[name="username"]');
-    usernameInput.node.value = 'john123';
+    usernameInput.instance().value = 'john123';
     usernameInput.simulate('change', usernameInput);
     expect(wrapper.state().username).toEqual('john123');
   });

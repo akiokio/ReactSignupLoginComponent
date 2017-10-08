@@ -5,27 +5,6 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "devDependencies": {
-    "@kadira/storybook": "^2.21.0",
-    "babel-preset-react-app": "^3.0.3",
-    "coveralls": "^3.0.0",
-    "enzyme": "3.1.0",
-    "eslint": "4.8.0",
-    "eslint-config-airbnb": "16.0.0",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "6.0.2",
-    "eslint-plugin-react": "7.4.0",
-    "gh-pages": "^1.0.0",
-    "react-addons-test-utils": "15.6.2",
-    "react-scripts": "1.0.14"
-  },
-  "dependencies": {
-    "normalize.css": "^5.0.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-signup-login-component": "^0.1.6"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,9 +13,35 @@
     "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/*.js",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public -o build",
+    "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build-storybook",
     "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "babel-preset-react-app": "^3.0.3",
+    "coveralls": "^3.0.0",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
+    "eslint": "4.8.0",
+    "eslint-config-airbnb": "16.0.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.4.0",
+    "gh-pages": "^1.0.0",
+    "react-addons-test-utils": "15.6.2",
+    "react-scripts": "1.0.14",
+    "react-test-renderer": "16",
+    "@storybook/react": "^3.2.12",
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12"
+  },
+  "dependencies": {
+    "core-js": "^2.5.1",
+    "normalize.css": "^5.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-signup-login-component": "^0.1.6"
   },
   "homepage": "https://github.com/akiokio/ReactSignupLoginComponent"
 }
