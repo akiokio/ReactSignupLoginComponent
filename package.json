@@ -43,7 +43,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-signup-login-component": "^0.1.6"
+    "react-signup-login-component": "^1.0.0"
   },
   "homepage": "https://github.com/akiokio/ReactSignupLoginComponent",
   "repository": {
