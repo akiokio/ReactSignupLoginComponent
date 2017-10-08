@@ -1,16 +1,8 @@
-'use strict';
+/* global it, expect, describe, jest */
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _enzyme = require('enzyme');
-
-var _Signup = require('./Signup');
-
-var _Signup2 = _interopRequireDefault(_Signup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from 'react';
+import { shallow } from 'enzyme';
+import Signup from './Signup';
 
 describe('the signup form', function () {
   var requiredMockProps = {
@@ -22,11 +14,11 @@ describe('the signup form', function () {
     passwordConfirmation: ''
   };
   it('renders without crashing', function () {
-    (0, _enzyme.shallow)(_react2.default.createElement(_Signup2.default, requiredMockProps));
+    shallow(React.createElement(Signup, requiredMockProps));
   });
 
   it('renders the input fields', function () {
-    var form = (0, _enzyme.shallow)(_react2.default.createElement(_Signup2.default, requiredMockProps));
+    var form = shallow(React.createElement(Signup, requiredMockProps));
     expect(form.find('input[name="username"]')).toHaveLength(1);
     expect(form.find('input[name="password"]')).toHaveLength(1);
     expect(form.find('input[name="passwordConfirmation"]')).toHaveLength(1);
@@ -36,7 +28,7 @@ describe('the signup form', function () {
 
   it('should call handle signup when submit-signup clicked', function () {
     var signupCallback = jest.fn();
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Signup2.default, {
+    var wrapper = shallow(React.createElement(Signup, {
       handleShowLogin: jest.fn(),
       handleSignup: signupCallback,
       handleChange: jest.fn(),
@@ -47,4 +39,4 @@ describe('the signup form', function () {
     wrapper.find('#submit-signup').simulate('click');
     expect(signupCallback.mock.calls.length).toEqual(1);
   });
-}); /* global it, expect, describe, jest */
+});

@@ -1,14 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import PropTypes from 'prop-types';
+import React from 'react';
 
 var localStyles = {
   wrapper: {
@@ -54,13 +45,13 @@ var Signup = function Signup(_ref) {
       username = _ref.username,
       password = _ref.password,
       passwordConfirmation = _ref.passwordConfirmation;
-  return _react2.default.createElement(
+  return React.createElement(
     'section',
     { id: 'signup-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
-    _react2.default.createElement(
+    React.createElement(
       'div',
       { id: 'fields', style: Object.assign({}, localStyles.inputWrapper, styles.inputWrapper) },
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'text',
         id: 'username',
@@ -71,7 +62,7 @@ var Signup = function Signup(_ref) {
         },
         value: username
       }),
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'password',
         id: 'password',
@@ -82,7 +73,7 @@ var Signup = function Signup(_ref) {
         },
         value: password
       }),
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'password',
         id: 'passwordConfirmation',
@@ -94,10 +85,10 @@ var Signup = function Signup(_ref) {
         value: passwordConfirmation
       })
     ),
-    _react2.default.createElement(
+    React.createElement(
       'div',
       { style: Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper) },
-      _react2.default.createElement(
+      React.createElement(
         'button',
         {
           id: 'login-button',
@@ -108,7 +99,7 @@ var Signup = function Signup(_ref) {
         },
         'Login'
       ),
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         id: 'submit-signup',
         type: 'submit',
         value: 'Signup',
@@ -120,19 +111,19 @@ var Signup = function Signup(_ref) {
 };
 
 Signup.propTypes = {
-  handleShowLogin: _react2.default.PropTypes.func.isRequired,
-  handleSignup: _react2.default.PropTypes.func.isRequired,
-  handleChange: _react2.default.PropTypes.func.isRequired,
-  username: _react2.default.PropTypes.string.isRequired,
-  password: _react2.default.PropTypes.string.isRequired,
-  passwordConfirmation: _react2.default.PropTypes.string.isRequired,
-  styles: _react2.default.PropTypes.shape({
-    wrapper: _react2.default.PropTypes.object,
-    inputWrapper: _react2.default.PropTypes.object,
-    buttonsWrapper: _react2.default.PropTypes.object,
-    input: _react2.default.PropTypes.object,
-    recoverPassword: _react2.default.PropTypes.object,
-    button: _react2.default.PropTypes.object
+  handleShowLogin: PropTypes.func.isRequired,
+  handleSignup: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  passwordConfirmation: PropTypes.string.isRequired,
+  styles: PropTypes.shape({
+    wrapper: PropTypes.object,
+    inputWrapper: PropTypes.object,
+    buttonsWrapper: PropTypes.object,
+    input: PropTypes.object,
+    recoverPassword: PropTypes.object,
+    button: PropTypes.object
   })
 };
 
@@ -140,4 +131,4 @@ Signup.defaultProps = {
   styles: {}
 };
 
-exports.default = Signup;
+export default Signup;

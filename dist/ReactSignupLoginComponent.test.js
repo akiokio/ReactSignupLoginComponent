@@ -1,24 +1,10 @@
-'use strict';
+/* global it, expect, describe, jest */
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _enzyme = require('enzyme');
-
-var _ReactSignupLoginComponent = require('./ReactSignupLoginComponent');
-
-var _ReactSignupLoginComponent2 = _interopRequireDefault(_ReactSignupLoginComponent);
-
-var _Login = require('./Login');
-
-var _Login2 = _interopRequireDefault(_Login);
-
-var _Signup = require('./Signup');
-
-var _Signup2 = _interopRequireDefault(_Signup);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import ReactSignupLoginComponent from './ReactSignupLoginComponent';
+import Login from './Login';
+import Signup from './Signup';
 
 describe('the main wrapper', function () {
   var requiredMockProps = {
@@ -27,16 +13,16 @@ describe('the main wrapper', function () {
     handleRecoverPassword: jest.fn()
   };
   it('renders without crashing', function () {
-    (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    shallow(React.createElement(ReactSignupLoginComponent, requiredMockProps));
   });
 
   it('renders the default skeleton', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    var wrapper = shallow(React.createElement(ReactSignupLoginComponent, requiredMockProps));
     expect(wrapper.find('h1')).toHaveLength(1);
   });
 
   it('initialize with the default state', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    var wrapper = shallow(React.createElement(ReactSignupLoginComponent, requiredMockProps));
     expect(wrapper.state().isLogin).toEqual(true);
     expect(wrapper.state().isRecoveringPassword).toEqual(false);
     expect(wrapper.state().username).toEqual('');
@@ -46,7 +32,7 @@ describe('the main wrapper', function () {
 
   it('initialize with the required props', function () {
     var dummyFunc = jest.fn();
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = shallow(React.createElement(ReactSignupLoginComponent, {
       handleSignup: dummyFunc,
       handleLogin: dummyFunc,
       handleRecoverPassword: dummyFunc
@@ -57,46 +43,46 @@ describe('the main wrapper', function () {
   });
 
   it('renders with the login component by default', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
-    expect(wrapper.find(_Login2.default)).toHaveLength(1);
+    var wrapper = shallow(React.createElement(ReactSignupLoginComponent, requiredMockProps));
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('render with the signup form if the isLogin equals false', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isLogin: false }, requiredMockProps)));
-    expect(wrapper.find(_Signup2.default)).toHaveLength(1);
+    var wrapper = shallow(React.createElement(ReactSignupLoginComponent, Object.assign({ isLogin: false }, requiredMockProps)));
+    expect(wrapper.find(Signup)).toHaveLength(1);
   });
 
   it('show the signup component on the signup button click', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, requiredMockProps));
     wrapper.find('#signup-button').simulate('click');
     expect(wrapper.state().isLogin).toEqual(false);
-    expect(wrapper.find(_Signup2.default)).toHaveLength(1);
+    expect(wrapper.find(Signup)).toHaveLength(1);
   });
 
   it('show the login component on the login button click on signup', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isLogin: false }, requiredMockProps)));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, Object.assign({ isLogin: false }, requiredMockProps)));
     wrapper.find('#login-button').simulate('click');
     expect(wrapper.state().isLogin).toEqual(true);
-    expect(wrapper.find(_Login2.default)).toHaveLength(1);
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('show the recover password component on the recover button click', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, requiredMockProps));
     wrapper.find('#recorver-password').simulate('click');
     expect(wrapper.state().isRecoveringPassword).toEqual(true);
     expect(wrapper.find('#recover-password-form')).toHaveLength(1);
   });
 
   it('show the login component on the login button click on recover password', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isRecoveringPassword: true }, requiredMockProps)));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, Object.assign({ isRecoveringPassword: true }, requiredMockProps)));
     wrapper.find('#login-button').simulate('click');
     expect(wrapper.state().isRecoveringPassword).toEqual(false);
-    expect(wrapper.find(_Login2.default)).toHaveLength(1);
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('should call handle signup when submit-signup clicked', function () {
     var signupCallback = jest.fn();
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       isLogin: false,
       handleSignup: signupCallback,
       handleLogin: jest.fn(),
@@ -108,7 +94,7 @@ describe('the main wrapper', function () {
 
   it('should call handle login when submit-login clicked', function () {
     var loginCallback = jest.fn();
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       handleSignup: jest.fn(),
       handleLogin: loginCallback,
       handleRecoverPassword: jest.fn()
@@ -119,7 +105,7 @@ describe('the main wrapper', function () {
 
   it('should call handle recover password when submit-recover-password clicked', function () {
     var recoverCallback = jest.fn();
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       isRecoveringPassword: true,
       handleSignup: jest.fn(),
       handleLogin: jest.fn(),
@@ -130,7 +116,7 @@ describe('the main wrapper', function () {
   });
 
   it('should attach the login inputs to the state', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, requiredMockProps));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, requiredMockProps));
     var usernameInput = wrapper.find('#login-form input[name="username"]');
     usernameInput.instance().value = 'john123';
     usernameInput.simulate('change', usernameInput);
@@ -143,7 +129,7 @@ describe('the main wrapper', function () {
   });
 
   it('should attach the signup inputs to the state', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isLogin: false }, requiredMockProps)));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, Object.assign({ isLogin: false }, requiredMockProps)));
     var usernameInput = wrapper.find('#signup-form input[name="username"]');
     usernameInput.instance().value = 'johnSignup123';
     usernameInput.simulate('change', usernameInput);
@@ -161,7 +147,7 @@ describe('the main wrapper', function () {
   });
 
   it('should attach the recorver password input to the state', function () {
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, Object.assign({ isRecoveringPassword: true }, requiredMockProps)));
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, Object.assign({ isRecoveringPassword: true }, requiredMockProps)));
     var usernameInput = wrapper.find('#recover-password-form input[name="username"]');
     usernameInput.instance().value = 'john123';
     usernameInput.simulate('change', usernameInput);
@@ -175,7 +161,7 @@ describe('the main wrapper', function () {
       password: '1234%##D',
       passwordConfirmation: '1234%##D'
     };
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       isLogin: false,
       handleSignup: signupCallback,
       handleLogin: jest.fn(),
@@ -192,7 +178,7 @@ describe('the main wrapper', function () {
       username: 'johndoeLog',
       password: '1234%##DLog'
     };
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       handleSignup: jest.fn(),
       handleLogin: loginCallback,
       handleRecoverPassword: jest.fn()
@@ -207,7 +193,7 @@ describe('the main wrapper', function () {
     var recoverPasswordValues = {
       username: 'johndoeForgot'
     };
-    var wrapper = (0, _enzyme.mount)(_react2.default.createElement(_ReactSignupLoginComponent2.default, {
+    var wrapper = mount(React.createElement(ReactSignupLoginComponent, {
       isRecoveringPassword: true,
       handleSignup: jest.fn(),
       handleLogin: jest.fn(),
@@ -217,4 +203,4 @@ describe('the main wrapper', function () {
     wrapper.find('#submit-recover-password').simulate('click');
     expect(recoverPasswordCallback.mock.calls[0][0]).toEqual(recoverPasswordValues);
   });
-}); /* global it, expect, describe, jest */
+});

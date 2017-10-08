@@ -1,14 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import PropTypes from 'prop-types';
+import React from 'react';
 
 var localStyles = {
   wrapper: {
@@ -48,13 +39,16 @@ var RecoverPassword = function RecoverPassword(_ref) {
       handleChange = _ref.handleChange,
       handleRecoverPassword = _ref.handleRecoverPassword,
       username = _ref.username;
-  return _react2.default.createElement(
+  return React.createElement(
     'section',
-    { id: 'recover-password-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
-    _react2.default.createElement(
+    {
+      id: 'recover-password-form',
+      style: Object.assign({}, localStyles.wrapper, styles.wrapper)
+    },
+    React.createElement(
       'div',
       { id: 'fields', style: Object.assign({}, localStyles.inputWrapper, styles.inputWrapper) },
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'text',
         id: 'username',
@@ -66,10 +60,10 @@ var RecoverPassword = function RecoverPassword(_ref) {
         value: username
       })
     ),
-    _react2.default.createElement(
+    React.createElement(
       'div',
       { style: Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper) },
-      _react2.default.createElement(
+      React.createElement(
         'button',
         {
           id: 'login-button',
@@ -80,7 +74,7 @@ var RecoverPassword = function RecoverPassword(_ref) {
         },
         'Login'
       ),
-      _react2.default.createElement('input', {
+      React.createElement('input', {
         id: 'submit-recover-password',
         name: 'submit-recover-password',
         type: 'submit',
@@ -93,16 +87,16 @@ var RecoverPassword = function RecoverPassword(_ref) {
 };
 
 RecoverPassword.propTypes = {
-  handleShowLogin: _react2.default.PropTypes.func.isRequired,
-  handleChange: _react2.default.PropTypes.func.isRequired,
-  handleRecoverPassword: _react2.default.PropTypes.func.isRequired,
-  username: _react2.default.PropTypes.string.isRequired,
-  styles: _react2.default.PropTypes.shape({
-    wrapper: _react2.default.PropTypes.object,
-    inputWrapper: _react2.default.PropTypes.object,
-    buttonsWrapper: _react2.default.PropTypes.object,
-    input: _react2.default.PropTypes.object,
-    button: _react2.default.PropTypes.object
+  handleShowLogin: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleRecoverPassword: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  styles: PropTypes.shape({
+    wrapper: PropTypes.object,
+    inputWrapper: PropTypes.object,
+    buttonsWrapper: PropTypes.object,
+    input: PropTypes.object,
+    button: PropTypes.object
   })
 };
 
@@ -110,4 +104,4 @@ RecoverPassword.defaultProps = {
   styles: {}
 };
 
-exports.default = RecoverPassword;
+export default RecoverPassword;

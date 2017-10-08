@@ -1,16 +1,8 @@
-'use strict';
+/* global it, expect, describe, jest */
 
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _enzyme = require('enzyme');
-
-var _Login = require('./Login');
-
-var _Login2 = _interopRequireDefault(_Login);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import React from 'react';
+import { shallow } from 'enzyme';
+import Login from './Login';
 
 describe('the login form', function () {
   var requiredMockProps = {
@@ -22,11 +14,11 @@ describe('the login form', function () {
     password: ''
   };
   it('renders without crashing', function () {
-    (0, _enzyme.shallow)(_react2.default.createElement(_Login2.default, requiredMockProps));
+    shallow(React.createElement(Login, requiredMockProps));
   });
 
   it('renders the default skeleton', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Login2.default, requiredMockProps));
+    var wrapper = shallow(React.createElement(Login, requiredMockProps));
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);
@@ -35,7 +27,7 @@ describe('the login form', function () {
   });
 
   it('renders with the default props', function () {
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Login2.default, requiredMockProps));
+    var wrapper = shallow(React.createElement(Login, requiredMockProps));
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('input[name="password"]')).toHaveLength(1);
     expect(wrapper.find('#recorver-password')).toHaveLength(1);
@@ -43,7 +35,7 @@ describe('the login form', function () {
 
   it('should call handle login when submit-login clicked', function () {
     var loginCallback = jest.fn();
-    var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_Login2.default, {
+    var wrapper = shallow(React.createElement(Login, {
       handleShowSignup: jest.fn(),
       handleLogin: loginCallback,
       handleShowRecover: jest.fn(),
@@ -54,4 +46,4 @@ describe('the login form', function () {
     wrapper.find('#submit-login').simulate('click');
     expect(loginCallback.mock.calls.length).toEqual(1);
   });
-}); /* global it, expect, describe, jest */
+});

@@ -1,30 +1,4 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Login = require('./Login');
-
-var _Login2 = _interopRequireDefault(_Login);
-
-var _Signup = require('./Signup');
-
-var _Signup2 = _interopRequireDefault(_Signup);
-
-var _RecoverPassword = require('./RecoverPassword');
-
-var _RecoverPassword2 = _interopRequireDefault(_RecoverPassword);
-
-require('./normalize.css');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -34,8 +8,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// Our only css dependency
+import PropTypes from 'prop-types';
+import React from 'react';
 
+import Login from './Login';
+import Signup from './Signup';
+import RecoverPassword from './RecoverPassword';
+
+// Our only css dependency
+import './normalize.css';
 
 var ReactSignupLoginComponent = function (_React$Component) {
   _inherits(ReactSignupLoginComponent, _React$Component);
@@ -121,7 +102,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
       };
       var showCard = function showCard() {
         if (_this2.state.isLogin && !_this2.state.isRecoveringPassword) {
-          return _react2.default.createElement(_Login2.default, {
+          return React.createElement(Login, {
             key: 'login-form',
             handleShowSignup: _this2.updateState,
             handleShowRecover: _this2.updateState,
@@ -132,7 +113,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
             password: _this2.state.password
           });
         } else if (!_this2.state.isLogin && !_this2.state.isRecoveringPassword) {
-          return _react2.default.createElement(_Signup2.default, {
+          return React.createElement(Signup, {
             key: 'signup-form',
             handleShowLogin: _this2.updateState,
             styles: _this2.props.styles.signup,
@@ -143,7 +124,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
             passwordConfirmation: _this2.state.passwordConfirmation
           });
         }
-        return _react2.default.createElement(_RecoverPassword2.default, {
+        return React.createElement(RecoverPassword, {
           handleShowLogin: _this2.updateState,
           handleRecoverPassword: _this2.bubleUpRecoverPassword,
           handleChange: _this2.updateState,
@@ -151,15 +132,18 @@ var ReactSignupLoginComponent = function (_React$Component) {
           username: _this2.state.username
         });
       };
-      return _react2.default.createElement(
+      return React.createElement(
         'section',
-        { id: 'main-wrapper', style: Object.assign(styles.wrapper, this.props.styles.mainWrapper) },
-        _react2.default.createElement(
+        {
+          id: 'main-wrapper',
+          style: Object.assign(styles.wrapper, this.props.styles.mainWrapper)
+        },
+        React.createElement(
           'h1',
           { style: Object.assign(styles.title, this.props.styles.mainTitle) },
           this.props.title
         ),
-        _react2.default.createElement(
+        React.createElement(
           'div',
           { style: Object.assign(styles.flipper, this.props.styles.flipper) },
           showCard()
@@ -169,44 +153,44 @@ var ReactSignupLoginComponent = function (_React$Component) {
   }]);
 
   return ReactSignupLoginComponent;
-}(_react2.default.Component);
+}(React.Component);
 
 ReactSignupLoginComponent.propTypes = {
-  title: _react2.default.PropTypes.string,
-  isLogin: _react2.default.PropTypes.bool,
-  isRecoveringPassword: _react2.default.PropTypes.bool,
-  styles: _react2.default.PropTypes.shape({
-    mainWrapper: _react2.default.PropTypes.object,
-    mainTitle: _react2.default.PropTypes.object,
-    flipper: _react2.default.PropTypes.object,
-    signup: _react2.default.PropTypes.shape({
-      wrapper: _react2.default.PropTypes.object,
-      inputWrapper: _react2.default.PropTypes.object,
-      buttonsWrapper: _react2.default.PropTypes.object,
-      input: _react2.default.PropTypes.object,
-      recoverPassword: _react2.default.PropTypes.object,
-      button: _react2.default.PropTypes.object
+  title: PropTypes.string,
+  isLogin: PropTypes.bool,
+  isRecoveringPassword: PropTypes.bool,
+  styles: PropTypes.shape({
+    mainWrapper: PropTypes.object,
+    mainTitle: PropTypes.object,
+    flipper: PropTypes.object,
+    signup: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      recoverPassword: PropTypes.object,
+      button: PropTypes.object
     }),
-    login: _react2.default.PropTypes.shape({
-      wrapper: _react2.default.PropTypes.object,
-      inputWrapper: _react2.default.PropTypes.object,
-      buttonsWrapper: _react2.default.PropTypes.object,
-      input: _react2.default.PropTypes.object,
-      recoverPasswordWrapper: _react2.default.PropTypes.object,
-      recoverPasswordButton: _react2.default.PropTypes.object,
-      button: _react2.default.PropTypes.object
+    login: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      recoverPasswordWrapper: PropTypes.object,
+      recoverPasswordButton: PropTypes.object,
+      button: PropTypes.object
     }),
-    recoverPassword: _react2.default.PropTypes.shape({
-      wrapper: _react2.default.PropTypes.object,
-      inputWrapper: _react2.default.PropTypes.object,
-      buttonsWrapper: _react2.default.PropTypes.object,
-      input: _react2.default.PropTypes.object,
-      button: _react2.default.PropTypes.object
+    recoverPassword: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      button: PropTypes.object
     })
   }),
-  handleSignup: _react2.default.PropTypes.func.isRequired,
-  handleLogin: _react2.default.PropTypes.func.isRequired,
-  handleRecoverPassword: _react2.default.PropTypes.func.isRequired
+  handleSignup: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired,
+  handleRecoverPassword: PropTypes.func.isRequired
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -216,4 +200,4 @@ ReactSignupLoginComponent.defaultProps = {
   styles: {}
 };
 
-exports.default = ReactSignupLoginComponent;
+export default ReactSignupLoginComponent;

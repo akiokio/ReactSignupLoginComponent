@@ -8,11 +8,10 @@ node_js:
   - '8'
 script:
   - yarn coverage
-  - yarn build
 after_success:
-  - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
-  - build-storybook
-  - npm run semantic-release
+  - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js" # Update coverage badge
+  - build-storybook # Update the example website (storybook app)
+  - npm run semantic-release # Generate an automatic publish on npm
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
