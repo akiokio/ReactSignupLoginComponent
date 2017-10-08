@@ -1,6 +1,6 @@
 {
   "name": "react-signup-login-component",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "main": "dist/ReactSignupLoginComponent.js",
   "engines": {
     "node": ">=6.0.0"
@@ -15,7 +15,8 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
     "babel-preset-react-app": "^3.0.3",
@@ -33,7 +34,8 @@
     "react-test-renderer": "16",
     "@storybook/react": "^3.2.12",
     "@storybook/addon-actions": "^3.2.12",
-    "@storybook/addon-links": "^3.2.12"
+    "@storybook/addon-links": "^3.2.12",
+    "semantic-release": "^8.0.3"
   },
   "dependencies": {
     "core-js": "^2.5.1",
@@ -43,5 +45,9 @@
     "react-dom": "^16.0.0",
     "react-signup-login-component": "^0.1.6"
   },
-  "homepage": "https://github.com/akiokio/ReactSignupLoginComponent"
+  "homepage": "https://github.com/akiokio/ReactSignupLoginComponent",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akiokio/ReactSignupLoginComponent.git"
+  }
 }
