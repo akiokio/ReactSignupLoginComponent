@@ -6,14 +6,14 @@ notifications:
   email: false
 node_js:
   - '8'
-  - '7'
-  - '6'
 script:
   - yarn coverage
   - yarn build
 after_success:
+  - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+  - build-storybook
+  - yarn deploy
   - npm run semantic-release
-after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
