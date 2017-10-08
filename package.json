@@ -7,15 +7,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "build:module": "NODE_ENV=production babel src/components --presets react-app --out-dir dist --copy-files",
     "test": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/*.js",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "predeploy": "npm run build-storybook",
-    "deploy": "gh-pages -d build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
