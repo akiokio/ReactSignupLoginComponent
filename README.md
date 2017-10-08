@@ -7,6 +7,7 @@
 Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) to learn how to use it.
 
 ## Features
+- Updated to React 16 🎉
 - Login
 - Signup
 - Recover Password
@@ -64,7 +65,7 @@ export default LoginPage;
 ### `handleSignup(object)`
 Called when the users clicks on the signup button and the form is valid
 **return**: An object with the attributes: **username**, **password** and **passwordConfirmation**
-**example**: 
+**example**:
 ```js
 {
   username: 'johndoe',
@@ -75,7 +76,7 @@ Called when the users clicks on the signup button and the form is valid
 ### `handleLogin(object)`
 Called when the users clicks on the login button and the form is valid
 **return**: An object with the attributes: **username** and **password**
-**example**: 
+**example**:
 ```js
 {
   username: 'johndoe',
@@ -86,7 +87,7 @@ Called when the users clicks on the login button and the form is valid
 ### `handleRecoverPassword(object)`
 Called when the users clicks on the recover password button and the form is valid
 **return**: An object with the attributes: **username**
-**example**: 
+**example**:
 ```js
 {
   username: 'johndoe'
@@ -96,7 +97,7 @@ Called when the users clicks on the recover password button and the form is vali
 ### Optional props
 ### `title`
 Sets the h1 title on the login box
-**example**: 
+**example**:
 ```js
 <Wrapper
   title="My awesome company"
@@ -106,7 +107,7 @@ Sets the h1 title on the login box
 
 ### `styles`
 You can overhide the component style passing an object to the styles prop. Here's an example with all the possible keys. The values can be any valid css property.
-**example**: 
+**example**:
 ```js
 <ReactSignupLoginComponent
   styles={{

@@ -1,4 +1,8 @@
 /* global document, alert */
+import './shims.js';
+
+import 'core-js/es6/map';
+import 'core-js/es6/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -31,9 +35,6 @@ const App = () => {
   );
 };
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
-);
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;
