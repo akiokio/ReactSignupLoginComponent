@@ -1,6 +1,6 @@
 {
   "name": "react-signup-login-component",
-  "version": "0.1.6",
+  "version": "1.0.0",
   "main": "dist/ReactSignupLoginComponent.js",
   "engines": {
     "node": ">=6.0.0"
@@ -20,10 +20,11 @@
     "react-scripts": "1.0.14"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0",
-    "react": "16.0.0",
-    "react-dom": "16.0.0",
-    "react-signup-login-component": "^0.1.5"
+    "normalize.css": "^5.0.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-signup-login-component": "^0.1.6"
   },
   "scripts": {
     "start": "react-scripts start",

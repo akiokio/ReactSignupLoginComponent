@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Login from './Login';
@@ -72,88 +73,97 @@ class ReactSignupLoginComponent extends React.Component {
         transition: '0.4s',
         transformStyle: 'preserve-3d',
         position: 'relative',
-        transform: `rotateY(${!this.state.isLogin || this.state.isRecoveringPassword ? '180' : '0'}deg)`,
+        transform: `rotateY(${!this.state.isLogin || this.state.isRecoveringPassword
+          ? '180'
+          : '0'}deg)`,
       },
     };
     const showCard = () => {
       if (this.state.isLogin && !this.state.isRecoveringPassword) {
-        return (<Login
-          key="login-form"
-          handleShowSignup={this.updateState}
-          handleShowRecover={this.updateState}
-          styles={this.props.styles.login}
-          handleLogin={this.bubleUpLogin}
-          handleChange={this.updateState}
-          username={this.state.username}
-          password={this.state.password}
-        />);
+        return (
+          <Login
+            key="login-form"
+            handleShowSignup={this.updateState}
+            handleShowRecover={this.updateState}
+            styles={this.props.styles.login}
+            handleLogin={this.bubleUpLogin}
+            handleChange={this.updateState}
+            username={this.state.username}
+            password={this.state.password}
+          />
+        );
       } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
-        return (<Signup
-          key="signup-form"
-          handleShowLogin={this.updateState}
-          styles={this.props.styles.signup}
-          handleSignup={this.bubleUpSignup}
-          handleChange={this.updateState}
-          username={this.state.username}
-          password={this.state.password}
-          passwordConfirmation={this.state.passwordConfirmation}
-        />);
+        return (
+          <Signup
+            key="signup-form"
+            handleShowLogin={this.updateState}
+            styles={this.props.styles.signup}
+            handleSignup={this.bubleUpSignup}
+            handleChange={this.updateState}
+            username={this.state.username}
+            password={this.state.password}
+            passwordConfirmation={this.state.passwordConfirmation}
+          />
+        );
       }
-      return (<RecoverPassword
-        handleShowLogin={this.updateState}
-        handleRecoverPassword={this.bubleUpRecoverPassword}
-        handleChange={this.updateState}
-        styles={this.props.styles.recoverPassword}
-        username={this.state.username}
-      />);
+      return (
+        <RecoverPassword
+          handleShowLogin={this.updateState}
+          handleRecoverPassword={this.bubleUpRecoverPassword}
+          handleChange={this.updateState}
+          styles={this.props.styles.recoverPassword}
+          username={this.state.username}
+        />
+      );
     };
     return (
-      <section id="main-wrapper" style={Object.assign(styles.wrapper, this.props.styles.mainWrapper)}>
+      <section
+        id="main-wrapper"
+        style={Object.assign(styles.wrapper, this.props.styles.mainWrapper)}
+      >
         <h1 style={Object.assign(styles.title, this.props.styles.mainTitle)}>{this.props.title}</h1>
-        <div style={Object.assign(styles.flipper, this.props.styles.flipper)}>
-          {showCard()}
-        </div>
+        <div style={Object.assign(styles.flipper, this.props.styles.flipper)}>{showCard()}</div>
       </section>
     );
   }
 }
 
 ReactSignupLoginComponent.propTypes = {
-  title: React.PropTypes.string,
-  isLogin: React.PropTypes.bool,
-  isRecoveringPassword: React.PropTypes.bool,
-  styles: React.PropTypes.shape({
-    mainWrapper: React.PropTypes.object,
-    mainTitle: React.PropTypes.object,
-    flipper: React.PropTypes.object,
-    signup: React.PropTypes.shape({
-      wrapper: React.PropTypes.object,
-      inputWrapper: React.PropTypes.object,
-      buttonsWrapper: React.PropTypes.object,
-      input: React.PropTypes.object,
-      recoverPassword: React.PropTypes.object,
-      button: React.PropTypes.object,
+  title: PropTypes.string,
+  isLogin: PropTypes.bool,
+  isRecoveringPassword: PropTypes.bool,
+  styles: PropTypes.shape({
+    mainWrapper: PropTypes.object,
+    mainTitle: PropTypes.object,
+    flipper: PropTypes.object,
+    signup: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      recoverPassword: PropTypes.object,
+      button: PropTypes.object,
     }),
-    login: React.PropTypes.shape({
-      wrapper: React.PropTypes.object,
-      inputWrapper: React.PropTypes.object,
-      buttonsWrapper: React.PropTypes.object,
-      input: React.PropTypes.object,
-      recoverPasswordWrapper: React.PropTypes.object,
-      recoverPasswordButton: React.PropTypes.object,
-      button: React.PropTypes.object,
+    login: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      recoverPasswordWrapper: PropTypes.object,
+      recoverPasswordButton: PropTypes.object,
+      button: PropTypes.object,
     }),
-    recoverPassword: React.PropTypes.shape({
-      wrapper: React.PropTypes.object,
-      inputWrapper: React.PropTypes.object,
-      buttonsWrapper: React.PropTypes.object,
-      input: React.PropTypes.object,
-      button: React.PropTypes.object,
+    recoverPassword: PropTypes.shape({
+      wrapper: PropTypes.object,
+      inputWrapper: PropTypes.object,
+      buttonsWrapper: PropTypes.object,
+      input: PropTypes.object,
+      button: PropTypes.object,
     }),
   }),
-  handleSignup: React.PropTypes.func.isRequired,
-  handleLogin: React.PropTypes.func.isRequired,
-  handleRecoverPassword: React.PropTypes.func.isRequired,
+  handleSignup: PropTypes.func.isRequired,
+  handleLogin: PropTypes.func.isRequired,
+  handleRecoverPassword: PropTypes.func.isRequired,
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -162,6 +172,5 @@ ReactSignupLoginComponent.defaultProps = {
   isRecoveringPassword: false,
   styles: {},
 };
-
 
 export default ReactSignupLoginComponent;

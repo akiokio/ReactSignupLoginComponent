@@ -35,14 +35,16 @@ describe('the login form', () => {
 
   it('should call handle login when submit-login clicked', () => {
     const loginCallback = jest.fn();
-    const wrapper = shallow(<Login
-      handleShowSignup={jest.fn()}
-      handleLogin={loginCallback}
-      handleShowRecover={jest.fn()}
-      handleChange={jest.fn()}
-      username=""
-      password=""
-    />);
+    const wrapper = shallow(
+      <Login
+        handleShowSignup={jest.fn()}
+        handleLogin={loginCallback}
+        handleShowRecover={jest.fn()}
+        handleChange={jest.fn()}
+        username=""
+        password=""
+      />,
+    );
     wrapper.find('#submit-login').simulate('click');
     expect(loginCallback.mock.calls.length).toEqual(1);
   });

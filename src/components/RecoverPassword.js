@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 const localStyles = {
@@ -32,8 +33,17 @@ const localStyles = {
   },
 };
 
-const RecoverPassword = ({ handleShowLogin, styles, handleChange, handleRecoverPassword, username }) => (
-  <section id="recover-password-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
+const RecoverPassword = ({
+  handleShowLogin,
+  styles,
+  handleChange,
+  handleRecoverPassword,
+  username,
+}) => (
+  <section
+    id="recover-password-form"
+    style={Object.assign({}, localStyles.wrapper, styles.wrapper)}
+  >
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
@@ -49,8 +59,12 @@ const RecoverPassword = ({ handleShowLogin, styles, handleChange, handleRecoverP
       <button
         id="login-button"
         style={Object.assign({}, localStyles.button, styles.button)}
-        onClick={() => { handleShowLogin('isRecoveringPassword', false); }}
-      >Login</button>
+        onClick={() => {
+          handleShowLogin('isRecoveringPassword', false);
+        }}
+      >
+        Login
+      </button>
       <input
         id="submit-recover-password"
         name="submit-recover-password"
@@ -64,16 +78,16 @@ const RecoverPassword = ({ handleShowLogin, styles, handleChange, handleRecoverP
 );
 
 RecoverPassword.propTypes = {
-  handleShowLogin: React.PropTypes.func.isRequired,
-  handleChange: React.PropTypes.func.isRequired,
-  handleRecoverPassword: React.PropTypes.func.isRequired,
-  username: React.PropTypes.string.isRequired,
-  styles: React.PropTypes.shape({
-    wrapper: React.PropTypes.object,
-    inputWrapper: React.PropTypes.object,
-    buttonsWrapper: React.PropTypes.object,
-    input: React.PropTypes.object,
-    button: React.PropTypes.object,
+  handleShowLogin: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleRecoverPassword: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  styles: PropTypes.shape({
+    wrapper: PropTypes.object,
+    inputWrapper: PropTypes.object,
+    buttonsWrapper: PropTypes.object,
+    input: PropTypes.object,
+    button: PropTypes.object,
   }),
 };
 

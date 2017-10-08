@@ -7,15 +7,27 @@ import ReactSignupLoginComponent from '../components/ReactSignupLoginComponent';
 storiesOf('React signup login component', module)
   .add('to default wrapper', () => (
     <ReactSignupLoginComponent
-      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
-      handleLogin={(data) => { console.log(data); alert('Login callback, see log on the console to see the data.'); }}
-      handleRecoverPassword={(data) => { console.log(data); alert('Recover password callback, see log on the console to see the data.'); }}
+      handleSignup={(data) => {
+        console.log(data);
+        alert('Signup callback, see log on the console to see the data.');
+      }}
+      handleLogin={(data) => {
+        console.log(data);
+        alert('Login callback, see log on the console to see the data.');
+      }}
+      handleRecoverPassword={(data) => {
+        console.log(data);
+        alert('Recover password callback, see log on the console to see the data.');
+      }}
     />
   ))
   .add('to signup as default', () => (
     <ReactSignupLoginComponent
       isLogin={false}
-      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
+      handleSignup={(data) => {
+        console.log(data);
+        alert('Signup callback, see log on the console to see the data.');
+      }}
       handleLogin={() => {}}
       handleRecoverPassword={() => {}}
     />
@@ -24,15 +36,14 @@ storiesOf('React signup login component', module)
     <ReactSignupLoginComponent
       isLogin={false}
       title="My awesome company"
-      handleSignup={(data) => { console.log(data); alert('Signup callback, see log on the console to see the data.'); }}
+      handleSignup={(data) => {
+        console.log(data);
+        alert('Signup callback, see log on the console to see the data.');
+      }}
     />
   ))
-  .add('to recover password', () => (
-    <ReactSignupLoginComponent isRecoveringPassword />
-  ))
-  .add('to default wrapper with no css', () => (
-    <ReactSignupLoginComponent />
-  ))
+  .add('to recover password', () => <ReactSignupLoginComponent isRecoveringPassword />)
+  .add('to default wrapper with no css', () => <ReactSignupLoginComponent />)
   .add('to default wrapper with ugly css on all posible elements', () => (
     <ReactSignupLoginComponent
       styles={{
