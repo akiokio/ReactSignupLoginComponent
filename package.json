@@ -38,7 +38,7 @@
     "react-addons-test-utils": "15.6.2",
     "react-scripts": "1.0.17",
     "react-test-renderer": "16",
-    "semantic-release": "^11.0.2"
+    "semantic-release": "^12.2.2"
   },
   "dependencies": {
     "core-js": "^2.5.1",
