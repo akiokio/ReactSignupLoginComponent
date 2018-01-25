@@ -36,7 +36,7 @@
     "gh-pages": "^1.0.0",
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "15.6.2",
-    "react-scripts": "1.0.17",
+    "react-scripts": "1.1.0",
     "react-test-renderer": "16",
     "semantic-release": "^12.2.2"
   },
