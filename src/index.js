@@ -6,7 +6,7 @@ import 'core-js/es6/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactSignupLoginComponent from 'react-signup-login-component';
+import ReactSignupLoginComponent from './components/ReactSignupLoginComponent';
 
 import './index.css';
 
