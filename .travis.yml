@@ -11,7 +11,7 @@ script:
 after_success:
   - "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js" # Update coverage badge
   - build-storybook # Update the example website (storybook app)
-  - npm run semantic-release # Generate an automatic publish on npm
+  - npx semantic-release # Generate an automatic publish on npm
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
