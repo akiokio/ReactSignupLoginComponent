@@ -54,7 +54,12 @@ var Login = function Login(_ref) {
       handleLogin = _ref.handleLogin,
       handleChange = _ref.handleChange,
       username = _ref.username,
-      password = _ref.password;
+      password = _ref.password,
+      usernameCustomLabel = _ref.usernameCustomLabel,
+      passwordCustomLabel = _ref.passwordCustomLabel,
+      recoverPasswordCustomLabel = _ref.recoverPasswordCustomLabel,
+      signupCustomLabel = _ref.signupCustomLabel,
+      submitLoginCustomLabel = _ref.submitLoginCustomLabel;
   return React.createElement(
     'section',
     { id: 'login-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
@@ -64,9 +69,9 @@ var Login = function Login(_ref) {
       React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'text',
-        id: 'username',
-        name: 'username',
-        placeholder: 'Username',
+        id: usernameCustomLabel || "username",
+        name: usernameCustomLabel || "username",
+        placeholder: usernameCustomLabel || "Username",
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -75,9 +80,9 @@ var Login = function Login(_ref) {
       React.createElement('input', {
         style: Object.assign({}, localStyles.input, styles.input),
         type: 'password',
-        id: 'password',
-        name: 'password',
-        placeholder: 'Password',
+        id: passwordCustomLabel || "password",
+        name: passwordCustomLabel || "password",
+        placeholder: passwordCustomLabel || "Password",
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -101,7 +106,7 @@ var Login = function Login(_ref) {
               handleShowRecover('isRecoveringPassword', true);
             }
           },
-          'Recover Password'
+          recoverPasswordCustomLabel || 'Recover Password'
         )
       ),
       React.createElement(
@@ -113,13 +118,13 @@ var Login = function Login(_ref) {
             handleShowSignup('isLogin', false);
           }
         },
-        'Signup'
+        signupCustomLabel || 'Signup'
       ),
       React.createElement('input', {
-        id: 'submit-login',
-        name: 'submit-login',
+        id: submitLoginCustomLabel || "submit-login",
+        name: submitLoginCustomLabel || "submit-login",
+        value: submitLoginCustomLabel || "Login",
         type: 'submit',
-        value: 'Login',
         style: Object.assign({}, localStyles.button, styles.button),
         onClick: handleLogin
       })
@@ -142,7 +147,12 @@ Login.propTypes = {
     recoverPasswordWrapper: PropTypes.object,
     recoverPasswordButton: PropTypes.object,
     button: PropTypes.object
-  })
+  }),
+  usernameCustomLabel: PropTypes.string,
+  passwordCustomLabel: PropTypes.string,
+  recoverPasswordCustomLabel: PropTypes.string,
+  signupCustomLabel: PropTypes.string,
+  submitLoginCustomLabel: PropTypes.string
 };
 
 Login.defaultProps = {

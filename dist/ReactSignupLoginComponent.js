@@ -110,7 +110,12 @@ var ReactSignupLoginComponent = function (_React$Component) {
             handleLogin: _this2.bubleUpLogin,
             handleChange: _this2.updateState,
             username: _this2.state.username,
-            password: _this2.state.password
+            password: _this2.state.password,
+            usernameCustomLabel: _this2.props.usernameCustomLabel,
+            passwordCustomLabel: _this2.props.passwordCustomLabel,
+            recoverPasswordCustomLabel: _this2.props.recoverPasswordCustomLabel,
+            signupCustomLabel: _this2.props.signupCustomLabel,
+            submitLoginCustomLabel: _this2.props.submitLoginCustomLabel
           });
         } else if (!_this2.state.isLogin && !_this2.state.isRecoveringPassword) {
           return React.createElement(Signup, {
@@ -190,14 +195,24 @@ ReactSignupLoginComponent.propTypes = {
   }),
   handleSignup: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
-  handleRecoverPassword: PropTypes.func.isRequired
+  handleRecoverPassword: PropTypes.func.isRequired,
+  usernameCustomLabel: PropTypes.string,
+  passwordCustomLabel: PropTypes.string,
+  recoverPasswordCustomLabel: PropTypes.string,
+  signupCustomLabel: PropTypes.string,
+  submitLoginCustomLabel: PropTypes.string
 };
 
 ReactSignupLoginComponent.defaultProps = {
   title: 'Company Name',
   isLogin: true,
   isRecoveringPassword: false,
-  styles: {}
+  styles: {},
+  usernameCustomLabel: null,
+  passwordCustomLabel: null,
+  recoverPasswordCustomLabel: null,
+  signupCustomLabel: null,
+  submitLoginCustomLabel: null
 };
 
 export default ReactSignupLoginComponent;

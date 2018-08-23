@@ -55,24 +55,29 @@ const Login = ({
   handleChange,
   username,
   password,
+  usernameCustomLabel,
+  passwordCustomLabel,
+  recoverPasswordCustomLabel,
+  signupCustomLabel,
+  submitLoginCustomLabel,
 }) => (
   <section id="login-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
     <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
         type="text"
-        id="username"
-        name="username"
-        placeholder="Username"
+        id={usernameCustomLabel || "username"}
+        name={usernameCustomLabel || "username"}
+        placeholder={usernameCustomLabel || "Username"}
         onChange={e => handleChange(e.target.name, e.target.value)}
         value={username}
       />
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
         type="password"
-        id="password"
-        name="password"
-        placeholder="Password"
+        id={passwordCustomLabel || "password"}
+        name={passwordCustomLabel || "password"}
+        placeholder={passwordCustomLabel || "Password"}
         onChange={e => handleChange(e.target.name, e.target.value)}
         value={password}
       />
@@ -88,7 +93,7 @@ const Login = ({
             handleShowRecover('isRecoveringPassword', true);
           }}
         >
-          Recover Password
+          {recoverPasswordCustomLabel || 'Recover Password'}
         </button>
       </div>
       <button
@@ -98,13 +103,13 @@ const Login = ({
           handleShowSignup('isLogin', false);
         }}
       >
-        Signup
+        {signupCustomLabel || 'Signup'}
       </button>
       <input
-        id="submit-login"
-        name="submit-login"
+        id={submitLoginCustomLabel || "submit-login"}
+        name={submitLoginCustomLabel || "submit-login"}
+        value={submitLoginCustomLabel || "Login"}
         type="submit"
-        value="Login"
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={handleLogin}
       />
@@ -128,6 +133,11 @@ Login.propTypes = {
     recoverPasswordButton: PropTypes.object,
     button: PropTypes.object,
   }),
+  usernameCustomLabel: PropTypes.string,
+  passwordCustomLabel: PropTypes.string,
+  recoverPasswordCustomLabel: PropTypes.string,
+  signupCustomLabel: PropTypes.string,
+  submitLoginCustomLabel: PropTypes.string,
 };
 
 Login.defaultProps = {
