@@ -41,6 +41,7 @@ const RecoverPassword = ({
   username,
   usernameCustomLabel,
   goToLoginCustomLabel,
+  submitRecoverPasswordCustomLabel,
 }) => (
   <section
     id="recover-password-form"
@@ -72,7 +73,7 @@ const RecoverPassword = ({
         id="submit-recover-password"
         name="submit-recover-password"
         type="submit"
-        value="Recover"
+        value={submitRecoverPasswordCustomLabel}
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={handleRecoverPassword}
       />
@@ -94,6 +95,7 @@ RecoverPassword.propTypes = {
   }),
   usernameCustomLabel: PropTypes.string.isRequired,
   goToLoginCustomLabel: PropTypes.string.isRequired,
+  submitRecoverPasswordCustomLabel: PropTypes.string.isRequired,
 };
 
 RecoverPassword.defaultProps = {

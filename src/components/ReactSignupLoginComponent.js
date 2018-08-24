@@ -125,6 +125,7 @@ class ReactSignupLoginComponent extends React.Component {
           username={this.state.username}
           usernameCustomLabel={this.props.usernameCustomLabel}
           goToLoginCustomLabel={this.props.goToLoginCustomLabel}
+          submitRecoverPasswordCustomLabel={this.props.submitRecoverPasswordCustomLabel}
         />
       );
     };
@@ -184,6 +185,7 @@ ReactSignupLoginComponent.propTypes = {
   submitLoginCustomLabel: PropTypes.string,
   goToLoginCustomLabel: PropTypes.string,
   submitSignupCustomLabel: PropTypes.string,
+  submitRecoverPasswordCustomLabel: PropTypes.string,
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -199,6 +201,7 @@ ReactSignupLoginComponent.defaultProps = {
   goToLoginCustomLabel: 'Login',
   submitLoginCustomLabel: 'Signup',
   submitSignupCustomLabel: 'Signup',
+  submitRecoverPasswordCustomLabel: 'Recover',
 };
 
 export default ReactSignupLoginComponent;

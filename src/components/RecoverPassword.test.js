@@ -12,6 +12,7 @@ describe('the main wrapper', () => {
     username: '',
     usernameCustomLabel: 'Username',
     goToLoginCustomLabel: 'Login',
+    submitRecoverPasswordCustomLabel: 'Help me',
   };
   it('renders without crashing', () => {
     shallow(<RecoverPassword {...requiredMockProps} />);
@@ -26,14 +27,17 @@ describe('the main wrapper', () => {
   describe('with custom labels', () => {
     const customLabelUsername = 'email?';
     const customGoToLogin = 'Back to login';
+    const customSubmitRecover = 'Help me';
     const wrapper = shallow(
       <RecoverPassword
         {...requiredMockProps}
         usernameCustomLabel={customLabelUsername}
         goToLoginCustomLabel={customGoToLogin}
+        submitRecoverPasswordCustomLabel={customSubmitRecover}
       />,
     );
     it('should render custom labels if provided', () => {
+      expect(wrapper.find('input[name="submit-recover-password"]').prop('value')).toEqual(customSubmitRecover);
       expect(wrapper.find('input[name="username"]').prop('placeholder')).toEqual(customLabelUsername);
       expect(wrapper.find('#login-button').text()).toEqual(customGoToLogin);
     });

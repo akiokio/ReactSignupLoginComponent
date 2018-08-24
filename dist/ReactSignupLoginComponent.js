@@ -141,7 +141,8 @@ var ReactSignupLoginComponent = function (_React$Component) {
           styles: _this2.props.styles.recoverPassword,
           username: _this2.state.username,
           usernameCustomLabel: _this2.props.usernameCustomLabel,
-          goToLoginCustomLabel: _this2.props.goToLoginCustomLabel
+          goToLoginCustomLabel: _this2.props.goToLoginCustomLabel,
+          submitRecoverPasswordCustomLabel: _this2.props.submitRecoverPasswordCustomLabel
         });
       };
       return React.createElement(
@@ -210,7 +211,8 @@ ReactSignupLoginComponent.propTypes = {
   goToSignupCustomLabel: PropTypes.string,
   submitLoginCustomLabel: PropTypes.string,
   goToLoginCustomLabel: PropTypes.string,
-  submitSignupCustomLabel: PropTypes.string
+  submitSignupCustomLabel: PropTypes.string,
+  submitRecoverPasswordCustomLabel: PropTypes.string
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -225,7 +227,8 @@ ReactSignupLoginComponent.defaultProps = {
   goToSignupCustomLabel: 'Signup',
   goToLoginCustomLabel: 'Login',
   submitLoginCustomLabel: 'Signup',
-  submitSignupCustomLabel: 'Signup'
+  submitSignupCustomLabel: 'Signup',
+  submitRecoverPasswordCustomLabel: 'Recover'
 };
 
 export default ReactSignupLoginComponent;

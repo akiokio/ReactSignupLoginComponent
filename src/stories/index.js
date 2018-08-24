@@ -95,5 +95,6 @@ storiesOf('React signup login component', module)
       goToLoginCustomLabel="Back up login"
       submitSignupCustomLabel="Custom send"
       goToSignupCustomLabel="Create account?"
+      submitRecoverPasswordCustomLabel="Help me!"
     />
   ));

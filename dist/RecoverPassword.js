@@ -40,7 +40,8 @@ var RecoverPassword = function RecoverPassword(_ref) {
       handleRecoverPassword = _ref.handleRecoverPassword,
       username = _ref.username,
       usernameCustomLabel = _ref.usernameCustomLabel,
-      goToLoginCustomLabel = _ref.goToLoginCustomLabel;
+      goToLoginCustomLabel = _ref.goToLoginCustomLabel,
+      submitRecoverPasswordCustomLabel = _ref.submitRecoverPasswordCustomLabel;
   return React.createElement(
     'section',
     {
@@ -81,7 +82,7 @@ var RecoverPassword = function RecoverPassword(_ref) {
         id: 'submit-recover-password',
         name: 'submit-recover-password',
         type: 'submit',
-        value: 'Recover',
+        value: submitRecoverPasswordCustomLabel,
         style: Object.assign({}, localStyles.button, styles.button),
         onClick: handleRecoverPassword
       })
@@ -102,7 +103,8 @@ RecoverPassword.propTypes = {
     button: PropTypes.object
   }),
   usernameCustomLabel: PropTypes.string.isRequired,
-  goToLoginCustomLabel: PropTypes.string.isRequired
+  goToLoginCustomLabel: PropTypes.string.isRequired,
+  submitRecoverPasswordCustomLabel: PropTypes.string.isRequired
 };
 
 RecoverPassword.defaultProps = {

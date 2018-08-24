@@ -11,7 +11,8 @@ describe('the main wrapper', function () {
     handleRecoverPassword: jest.fn(),
     username: '',
     usernameCustomLabel: 'Username',
-    goToLoginCustomLabel: 'Login'
+    goToLoginCustomLabel: 'Login',
+    submitRecoverPasswordCustomLabel: 'Help me'
   };
   it('renders without crashing', function () {
     shallow(React.createElement(RecoverPassword, requiredMockProps));
@@ -26,11 +27,14 @@ describe('the main wrapper', function () {
   describe('with custom labels', function () {
     var customLabelUsername = 'email?';
     var customGoToLogin = 'Back to login';
+    var customSubmitRecover = 'Help me';
     var wrapper = shallow(React.createElement(RecoverPassword, Object.assign({}, requiredMockProps, {
       usernameCustomLabel: customLabelUsername,
-      goToLoginCustomLabel: customGoToLogin
+      goToLoginCustomLabel: customGoToLogin,
+      submitRecoverPasswordCustomLabel: customSubmitRecover
     })));
     it('should render custom labels if provided', function () {
+      expect(wrapper.find('input[name="submit-recover-password"]').prop('value')).toEqual(customSubmitRecover);
       expect(wrapper.find('input[name="username"]').prop('placeholder')).toEqual(customLabelUsername);
       expect(wrapper.find('#login-button').text()).toEqual(customGoToLogin);
     });
