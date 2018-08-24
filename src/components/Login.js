@@ -58,7 +58,7 @@ const Login = ({
   usernameCustomLabel,
   passwordCustomLabel,
   recoverPasswordCustomLabel,
-  signupCustomLabel,
+  goToSignupCustomLabel,
   submitLoginCustomLabel,
 }) => (
   <section id="login-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
@@ -66,18 +66,18 @@ const Login = ({
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
         type="text"
-        id={usernameCustomLabel || "username"}
-        name={usernameCustomLabel || "username"}
-        placeholder={usernameCustomLabel || "Username"}
+        id="username"
+        name="username"
+        placeholder={usernameCustomLabel}
         onChange={e => handleChange(e.target.name, e.target.value)}
         value={username}
       />
       <input
         style={Object.assign({}, localStyles.input, styles.input)}
         type="password"
-        id={passwordCustomLabel || "password"}
-        name={passwordCustomLabel || "password"}
-        placeholder={passwordCustomLabel || "Password"}
+        id="password"
+        name="password"
+        placeholder={passwordCustomLabel}
         onChange={e => handleChange(e.target.name, e.target.value)}
         value={password}
       />
@@ -88,27 +88,29 @@ const Login = ({
       >
         <button
           id="recorver-password"
+          type="button"
           style={Object.assign({}, localStyles.recoverPassword, styles.recoverPasswordButton)}
           onClick={() => {
             handleShowRecover('isRecoveringPassword', true);
           }}
         >
-          {recoverPasswordCustomLabel || 'Recover Password'}
+          {recoverPasswordCustomLabel}
         </button>
       </div>
       <button
         id="signup-button"
+        type="button"
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={() => {
           handleShowSignup('isLogin', false);
         }}
       >
-        {signupCustomLabel || 'Signup'}
+        {goToSignupCustomLabel}
       </button>
       <input
-        id={submitLoginCustomLabel || "submit-login"}
-        name={submitLoginCustomLabel || "submit-login"}
-        value={submitLoginCustomLabel || "Login"}
+        id="submit-login"
+        name="submit-login"
+        value={submitLoginCustomLabel}
         type="submit"
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={handleLogin}
@@ -133,11 +135,11 @@ Login.propTypes = {
     recoverPasswordButton: PropTypes.object,
     button: PropTypes.object,
   }),
-  usernameCustomLabel: PropTypes.string,
-  passwordCustomLabel: PropTypes.string,
-  recoverPasswordCustomLabel: PropTypes.string,
-  signupCustomLabel: PropTypes.string,
-  submitLoginCustomLabel: PropTypes.string,
+  usernameCustomLabel: PropTypes.string.isRequired,
+  passwordCustomLabel: PropTypes.string.isRequired,
+  recoverPasswordCustomLabel: PropTypes.string.isRequired,
+  goToSignupCustomLabel: PropTypes.string.isRequired,
+  submitLoginCustomLabel: PropTypes.string.isRequired,
 };
 
 Login.defaultProps = {

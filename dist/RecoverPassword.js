@@ -38,7 +38,9 @@ var RecoverPassword = function RecoverPassword(_ref) {
       styles = _ref.styles,
       handleChange = _ref.handleChange,
       handleRecoverPassword = _ref.handleRecoverPassword,
-      username = _ref.username;
+      username = _ref.username,
+      usernameCustomLabel = _ref.usernameCustomLabel,
+      goToLoginCustomLabel = _ref.goToLoginCustomLabel;
   return React.createElement(
     'section',
     {
@@ -53,7 +55,7 @@ var RecoverPassword = function RecoverPassword(_ref) {
         type: 'text',
         id: 'username',
         name: 'username',
-        placeholder: 'Username',
+        placeholder: usernameCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -67,12 +69,13 @@ var RecoverPassword = function RecoverPassword(_ref) {
         'button',
         {
           id: 'login-button',
+          type: 'button',
           style: Object.assign({}, localStyles.button, styles.button),
           onClick: function onClick() {
             handleShowLogin('isRecoveringPassword', false);
           }
         },
-        'Login'
+        goToLoginCustomLabel
       ),
       React.createElement('input', {
         id: 'submit-recover-password',
@@ -97,7 +100,9 @@ RecoverPassword.propTypes = {
     buttonsWrapper: PropTypes.object,
     input: PropTypes.object,
     button: PropTypes.object
-  })
+  }),
+  usernameCustomLabel: PropTypes.string.isRequired,
+  goToLoginCustomLabel: PropTypes.string.isRequired
 };
 
 RecoverPassword.defaultProps = {

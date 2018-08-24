@@ -39,6 +39,8 @@ const RecoverPassword = ({
   handleChange,
   handleRecoverPassword,
   username,
+  usernameCustomLabel,
+  goToLoginCustomLabel,
 }) => (
   <section
     id="recover-password-form"
@@ -50,7 +52,7 @@ const RecoverPassword = ({
         type="text"
         id="username"
         name="username"
-        placeholder="Username"
+        placeholder={usernameCustomLabel}
         onChange={e => handleChange(e.target.name, e.target.value)}
         value={username}
       />
@@ -58,12 +60,13 @@ const RecoverPassword = ({
     <div style={Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper)}>
       <button
         id="login-button"
+        type="button"
         style={Object.assign({}, localStyles.button, styles.button)}
         onClick={() => {
           handleShowLogin('isRecoveringPassword', false);
         }}
       >
-        Login
+        {goToLoginCustomLabel}
       </button>
       <input
         id="submit-recover-password"
@@ -89,6 +92,8 @@ RecoverPassword.propTypes = {
     input: PropTypes.object,
     button: PropTypes.object,
   }),
+  usernameCustomLabel: PropTypes.string.isRequired,
+  goToLoginCustomLabel: PropTypes.string.isRequired,
 };
 
 RecoverPassword.defaultProps = {

@@ -114,7 +114,7 @@ var ReactSignupLoginComponent = function (_React$Component) {
             usernameCustomLabel: _this2.props.usernameCustomLabel,
             passwordCustomLabel: _this2.props.passwordCustomLabel,
             recoverPasswordCustomLabel: _this2.props.recoverPasswordCustomLabel,
-            signupCustomLabel: _this2.props.signupCustomLabel,
+            goToSignupCustomLabel: _this2.props.goToSignupCustomLabel,
             submitLoginCustomLabel: _this2.props.submitLoginCustomLabel
           });
         } else if (!_this2.state.isLogin && !_this2.state.isRecoveringPassword) {
@@ -126,7 +126,12 @@ var ReactSignupLoginComponent = function (_React$Component) {
             handleChange: _this2.updateState,
             username: _this2.state.username,
             password: _this2.state.password,
-            passwordConfirmation: _this2.state.passwordConfirmation
+            passwordConfirmation: _this2.state.passwordConfirmation,
+            usernameCustomLabel: _this2.props.usernameCustomLabel,
+            passwordCustomLabel: _this2.props.passwordCustomLabel,
+            passwordConfirmationCustomLabel: _this2.props.passwordConfirmationCustomLabel,
+            goToLoginCustomLabel: _this2.props.goToLoginCustomLabel,
+            submitSignupCustomLabel: _this2.props.submitSignupCustomLabel
           });
         }
         return React.createElement(RecoverPassword, {
@@ -134,7 +139,9 @@ var ReactSignupLoginComponent = function (_React$Component) {
           handleRecoverPassword: _this2.bubleUpRecoverPassword,
           handleChange: _this2.updateState,
           styles: _this2.props.styles.recoverPassword,
-          username: _this2.state.username
+          username: _this2.state.username,
+          usernameCustomLabel: _this2.props.usernameCustomLabel,
+          goToLoginCustomLabel: _this2.props.goToLoginCustomLabel
         });
       };
       return React.createElement(
@@ -198,9 +205,12 @@ ReactSignupLoginComponent.propTypes = {
   handleRecoverPassword: PropTypes.func.isRequired,
   usernameCustomLabel: PropTypes.string,
   passwordCustomLabel: PropTypes.string,
+  passwordConfirmationCustomLabel: PropTypes.string,
   recoverPasswordCustomLabel: PropTypes.string,
-  signupCustomLabel: PropTypes.string,
-  submitLoginCustomLabel: PropTypes.string
+  goToSignupCustomLabel: PropTypes.string,
+  submitLoginCustomLabel: PropTypes.string,
+  goToLoginCustomLabel: PropTypes.string,
+  submitSignupCustomLabel: PropTypes.string
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -208,11 +218,14 @@ ReactSignupLoginComponent.defaultProps = {
   isLogin: true,
   isRecoveringPassword: false,
   styles: {},
-  usernameCustomLabel: null,
-  passwordCustomLabel: null,
-  recoverPasswordCustomLabel: null,
-  signupCustomLabel: null,
-  submitLoginCustomLabel: null
+  usernameCustomLabel: 'Username',
+  passwordCustomLabel: 'Password',
+  passwordConfirmationCustomLabel: 'Confirm password',
+  recoverPasswordCustomLabel: 'Recover Password',
+  goToSignupCustomLabel: 'Signup',
+  goToLoginCustomLabel: 'Login',
+  submitLoginCustomLabel: 'Signup',
+  submitSignupCustomLabel: 'Signup'
 };
 
 export default ReactSignupLoginComponent;

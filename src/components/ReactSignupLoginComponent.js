@@ -93,7 +93,7 @@ class ReactSignupLoginComponent extends React.Component {
             usernameCustomLabel={this.props.usernameCustomLabel}
             passwordCustomLabel={this.props.passwordCustomLabel}
             recoverPasswordCustomLabel={this.props.recoverPasswordCustomLabel}
-            signupCustomLabel={this.props.signupCustomLabel}
+            goToSignupCustomLabel={this.props.goToSignupCustomLabel}
             submitLoginCustomLabel={this.props.submitLoginCustomLabel}
           />
         );
@@ -108,6 +108,11 @@ class ReactSignupLoginComponent extends React.Component {
             username={this.state.username}
             password={this.state.password}
             passwordConfirmation={this.state.passwordConfirmation}
+            usernameCustomLabel={this.props.usernameCustomLabel}
+            passwordCustomLabel={this.props.passwordCustomLabel}
+            passwordConfirmationCustomLabel={this.props.passwordConfirmationCustomLabel}
+            goToLoginCustomLabel={this.props.goToLoginCustomLabel}
+            submitSignupCustomLabel={this.props.submitSignupCustomLabel}
           />
         );
       }
@@ -118,6 +123,8 @@ class ReactSignupLoginComponent extends React.Component {
           handleChange={this.updateState}
           styles={this.props.styles.recoverPassword}
           username={this.state.username}
+          usernameCustomLabel={this.props.usernameCustomLabel}
+          goToLoginCustomLabel={this.props.goToLoginCustomLabel}
         />
       );
     };
@@ -171,9 +178,12 @@ ReactSignupLoginComponent.propTypes = {
   handleRecoverPassword: PropTypes.func.isRequired,
   usernameCustomLabel: PropTypes.string,
   passwordCustomLabel: PropTypes.string,
+  passwordConfirmationCustomLabel: PropTypes.string,
   recoverPasswordCustomLabel: PropTypes.string,
-  signupCustomLabel: PropTypes.string,
+  goToSignupCustomLabel: PropTypes.string,
   submitLoginCustomLabel: PropTypes.string,
+  goToLoginCustomLabel: PropTypes.string,
+  submitSignupCustomLabel: PropTypes.string,
 };
 
 ReactSignupLoginComponent.defaultProps = {
@@ -181,11 +191,14 @@ ReactSignupLoginComponent.defaultProps = {
   isLogin: true,
   isRecoveringPassword: false,
   styles: {},
-  usernameCustomLabel: null,
-  passwordCustomLabel: null,
-  recoverPasswordCustomLabel: null,
-  signupCustomLabel: null,
-  submitLoginCustomLabel: null,
+  usernameCustomLabel: 'Username',
+  passwordCustomLabel: 'Password',
+  passwordConfirmationCustomLabel: 'Confirm password',
+  recoverPasswordCustomLabel: 'Recover Password',
+  goToSignupCustomLabel: 'Signup',
+  goToLoginCustomLabel: 'Login',
+  submitLoginCustomLabel: 'Signup',
+  submitSignupCustomLabel: 'Signup',
 };
 
 export default ReactSignupLoginComponent;

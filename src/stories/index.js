@@ -1,85 +1,99 @@
-import React from "react";
+import React from 'react';
 
-import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
+import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
 
-import ReactSignupLoginComponent from "../components/ReactSignupLoginComponent";
+import ReactSignupLoginComponent from '../components/ReactSignupLoginComponent';
 
-storiesOf("React signup login component", module)
-  .add("to default wrapper", () => (
+storiesOf('React signup login component', module)
+  .add('to default wrapper', () => (
     <ReactSignupLoginComponent
       handleSignup={data => {
         console.log(data);
-        alert("Signup callback, see log on the console to see the data.");
+        alert('Signup callback, see log on the console to see the data.');
       }}
       handleLogin={data => {
         console.log(data);
-        alert("Login callback, see log on the console to see the data.");
+        alert('Login callback, see log on the console to see the data.');
       }}
       handleRecoverPassword={data => {
         console.log(data);
         alert(
-          "Recover password callback, see log on the console to see the data."
+          'Recover password callback, see log on the console to see the data.'
         );
       }}
     />
   ))
-  .add("to signup as default", () => (
+  .add('to signup as default', () => (
     <ReactSignupLoginComponent
       isLogin={false}
-      handleSignup={data => {
+      handleSignup={(data) => {
         console.log(data);
-        alert("Signup callback, see log on the console to see the data.");
+        alert('Signup callback, see log on the console to see the data.');
       }}
       handleLogin={() => {}}
       handleRecoverPassword={() => {}}
     />
   ))
-  .add("to signup with custom title", () => (
+  .add('to signup with custom title', () => (
     <ReactSignupLoginComponent
       isLogin={false}
       title="My awesome company"
-      handleSignup={data => {
+      handleSignup={(data) => {
         console.log(data);
-        alert("Signup callback, see log on the console to see the data.");
+        alert('Signup callback, see log on the console to see the data.');
       }}
     />
   ))
-  .add("to recover password", () => (
+  .add('to recover password', () => (
     <ReactSignupLoginComponent isRecoveringPassword />
   ))
-  .add("to default wrapper with no css", () => <ReactSignupLoginComponent />)
-  .add("to default wrapper with ugly css on all posible elements", () => (
+  .add('to default wrapper with no css', () => <ReactSignupLoginComponent />)
+  .add('to default wrapper with ugly css on all posible elements', () => (
     <ReactSignupLoginComponent
       styles={{
-        mainWrapper: { backgroundColor: "blue" },
-        mainTitle: { color: "red" },
-        flipper: { transition: "0.1s" },
+        mainWrapper: { backgroundColor: 'blue' },
+        mainTitle: { color: 'red' },
+        flipper: { transition: '0.1s' },
         signup: {
-          wrapper: { backgroundColor: "yellow" },
-          inputWrapper: { backgroundColor: "AliceBlue" },
-          buttonsWrapper: { backgroundColor: "Aqua" },
-          input: { backgroundColor: "LavenderBlush" },
+          wrapper: { backgroundColor: 'yellow' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
+          input: { backgroundColor: 'LavenderBlush' },
           recoverPassword: {},
-          button: { backgroundColor: "LightCoral" }
+          button: { backgroundColor: 'LightCoral' }
         },
         login: {
-          wrapper: { backgroundColor: "yellow" },
-          inputWrapper: { backgroundColor: "AliceBlue" },
-          buttonsWrapper: { backgroundColor: "Aqua" },
-          input: { backgroundColor: "LavenderBlush" },
-          recoverPasswordWrapper: { backgroundColor: "MediumBlue" },
-          recoverPasswordButton: { backgroundColor: "OldLace " },
-          button: { backgroundColor: "LightCoral" }
+          wrapper: { backgroundColor: 'yellow' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
+          input: { backgroundColor: 'LavenderBlush' },
+          recoverPasswordWrapper: { backgroundColor: 'MediumBlue' },
+          recoverPasswordButton: { backgroundColor: 'OldLace ' },
+          button: { backgroundColor: 'LightCoral' },
         },
         recoverPassword: {
-          wrapper: { backgroundColor: "yellow" },
-          inputWrapper: { backgroundColor: "AliceBlue" },
-          buttonsWrapper: { backgroundColor: "Aqua" },
-          input: { backgroundColor: "LavenderBlush" },
-          button: { backgroundColor: "LightCoral" }
+          wrapper: { backgroundColor: 'yellow' },
+          inputWrapper: { backgroundColor: 'AliceBlue' },
+          buttonsWrapper: { backgroundColor: 'Aqua' },
+          input: { backgroundColor: 'LavenderBlush' },
+          button: { backgroundColor: 'LightCoral' },
         }
       }}
+    />
+  ))
+  .add('with custom labels', () => (
+    <ReactSignupLoginComponent
+      title="My custom labels"
+      usernameCustomLabel="Email"
+      passwordCustomLabel="Secure password"
+      passwordConfirmationCustomLabel="Secure password confirmation"
+      recoverPasswordCustomLabel="Lost pass?"
+      signupCustomLabel="Join us"
+      submitLoginCustomLabel="Should send?"
+      goToLoginCustomLabel="Back up login"
+      submitSignupCustomLabel="Custom send"
+      goToSignupCustomLabel="Create account?"
     />
   ));

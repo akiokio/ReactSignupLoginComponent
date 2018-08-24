@@ -3,14 +3,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RecoverPassword from './RecoverPassword';
-import Login from './Login';
 
 describe('the main wrapper', function () {
   var requiredMockProps = {
     handleShowLogin: jest.fn(),
     handleChange: jest.fn(),
     handleRecoverPassword: jest.fn(),
-    username: ''
+    username: '',
+    usernameCustomLabel: 'Username',
+    goToLoginCustomLabel: 'Login'
   };
   it('renders without crashing', function () {
     shallow(React.createElement(RecoverPassword, requiredMockProps));
@@ -20,5 +21,18 @@ describe('the main wrapper', function () {
     var wrapper = shallow(React.createElement(RecoverPassword, requiredMockProps));
     expect(wrapper.find('input[name="username"]')).toHaveLength(1);
     expect(wrapper.find('#login-button')).toHaveLength(1);
+  });
+
+  describe('with custom labels', function () {
+    var customLabelUsername = 'email?';
+    var customGoToLogin = 'Back to login';
+    var wrapper = shallow(React.createElement(RecoverPassword, Object.assign({}, requiredMockProps, {
+      usernameCustomLabel: customLabelUsername,
+      goToLoginCustomLabel: customGoToLogin
+    })));
+    it('should render custom labels if provided', function () {
+      expect(wrapper.find('input[name="username"]').prop('placeholder')).toEqual(customLabelUsername);
+      expect(wrapper.find('#login-button').text()).toEqual(customGoToLogin);
+    });
   });
 });
