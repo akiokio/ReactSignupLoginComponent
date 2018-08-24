@@ -54,7 +54,12 @@ var Login = function Login(_ref) {
       handleLogin = _ref.handleLogin,
       handleChange = _ref.handleChange,
       username = _ref.username,
-      password = _ref.password;
+      password = _ref.password,
+      usernameCustomLabel = _ref.usernameCustomLabel,
+      passwordCustomLabel = _ref.passwordCustomLabel,
+      recoverPasswordCustomLabel = _ref.recoverPasswordCustomLabel,
+      goToSignupCustomLabel = _ref.goToSignupCustomLabel,
+      submitLoginCustomLabel = _ref.submitLoginCustomLabel;
   return React.createElement(
     'section',
     { id: 'login-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
@@ -66,7 +71,7 @@ var Login = function Login(_ref) {
         type: 'text',
         id: 'username',
         name: 'username',
-        placeholder: 'Username',
+        placeholder: usernameCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -77,7 +82,7 @@ var Login = function Login(_ref) {
         type: 'password',
         id: 'password',
         name: 'password',
-        placeholder: 'Password',
+        placeholder: passwordCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -96,30 +101,32 @@ var Login = function Login(_ref) {
           'button',
           {
             id: 'recorver-password',
+            type: 'button',
             style: Object.assign({}, localStyles.recoverPassword, styles.recoverPasswordButton),
             onClick: function onClick() {
               handleShowRecover('isRecoveringPassword', true);
             }
           },
-          'Recover Password'
+          recoverPasswordCustomLabel
         )
       ),
       React.createElement(
         'button',
         {
           id: 'signup-button',
+          type: 'button',
           style: Object.assign({}, localStyles.button, styles.button),
           onClick: function onClick() {
             handleShowSignup('isLogin', false);
           }
         },
-        'Signup'
+        goToSignupCustomLabel
       ),
       React.createElement('input', {
         id: 'submit-login',
         name: 'submit-login',
+        value: submitLoginCustomLabel,
         type: 'submit',
-        value: 'Login',
         style: Object.assign({}, localStyles.button, styles.button),
         onClick: handleLogin
       })
@@ -142,7 +149,12 @@ Login.propTypes = {
     recoverPasswordWrapper: PropTypes.object,
     recoverPasswordButton: PropTypes.object,
     button: PropTypes.object
-  })
+  }),
+  usernameCustomLabel: PropTypes.string.isRequired,
+  passwordCustomLabel: PropTypes.string.isRequired,
+  recoverPasswordCustomLabel: PropTypes.string.isRequired,
+  goToSignupCustomLabel: PropTypes.string.isRequired,
+  submitLoginCustomLabel: PropTypes.string.isRequired
 };
 
 Login.defaultProps = {

@@ -44,7 +44,12 @@ var Signup = function Signup(_ref) {
       handleChange = _ref.handleChange,
       username = _ref.username,
       password = _ref.password,
-      passwordConfirmation = _ref.passwordConfirmation;
+      passwordConfirmation = _ref.passwordConfirmation,
+      usernameCustomLabel = _ref.usernameCustomLabel,
+      passwordCustomLabel = _ref.passwordCustomLabel,
+      passwordConfirmationCustomLabel = _ref.passwordConfirmationCustomLabel,
+      goToLoginCustomLabel = _ref.goToLoginCustomLabel,
+      submitSignupCustomLabel = _ref.submitSignupCustomLabel;
   return React.createElement(
     'section',
     { id: 'signup-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
@@ -56,7 +61,7 @@ var Signup = function Signup(_ref) {
         type: 'text',
         id: 'username',
         name: 'username',
-        placeholder: 'Username',
+        placeholder: usernameCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -67,7 +72,7 @@ var Signup = function Signup(_ref) {
         type: 'password',
         id: 'password',
         name: 'password',
-        placeholder: 'Password',
+        placeholder: passwordCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -78,7 +83,7 @@ var Signup = function Signup(_ref) {
         type: 'password',
         id: 'passwordConfirmation',
         name: 'passwordConfirmation',
-        placeholder: 'Confirm password',
+        placeholder: passwordConfirmationCustomLabel,
         onChange: function onChange(e) {
           return handleChange(e.target.name, e.target.value);
         },
@@ -92,17 +97,18 @@ var Signup = function Signup(_ref) {
         'button',
         {
           id: 'login-button',
+          type: 'button',
           style: Object.assign({}, localStyles.button, styles.button),
           onClick: function onClick() {
             handleShowLogin('isLogin', true);
           }
         },
-        'Login'
+        goToLoginCustomLabel
       ),
       React.createElement('input', {
         id: 'submit-signup',
         type: 'submit',
-        value: 'Signup',
+        value: submitSignupCustomLabel,
         style: Object.assign({}, localStyles.button, styles.button),
         onClick: handleSignup
       })
@@ -124,7 +130,12 @@ Signup.propTypes = {
     input: PropTypes.object,
     recoverPassword: PropTypes.object,
     button: PropTypes.object
-  })
+  }),
+  usernameCustomLabel: PropTypes.string.isRequired,
+  passwordCustomLabel: PropTypes.string.isRequired,
+  passwordConfirmationCustomLabel: PropTypes.string.isRequired,
+  goToLoginCustomLabel: PropTypes.string.isRequired,
+  submitSignupCustomLabel: PropTypes.string.isRequired
 };
 
 Signup.defaultProps = {

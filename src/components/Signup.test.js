@@ -12,6 +12,14 @@ describe('the signup form', () => {
     username: '',
     password: '',
     passwordConfirmation: '',
+    usernameCustomLabel: 'Username',
+    passwordCustomLabel: 'Password',
+    passwordConfirmationCustomLabel: 'Confirm password',
+    recoverPasswordCustomLabel: 'Recover Password',
+    signupCustomLabel: 'Signup',
+    submitLoginCustomLabel: 'Signup',
+    goToLoginCustomLabel: 'Login',
+    submitSignupCustomLabel: 'Signup',
   };
   it('renders without crashing', () => {
     shallow(<Signup {...requiredMockProps} />);
@@ -30,6 +38,7 @@ describe('the signup form', () => {
     const signupCallback = jest.fn();
     const wrapper = shallow(
       <Signup
+        {...requiredMockProps}
         handleShowLogin={jest.fn()}
         handleSignup={signupCallback}
         handleChange={jest.fn()}
@@ -40,5 +49,34 @@ describe('the signup form', () => {
     );
     wrapper.find('#submit-signup').simulate('click');
     expect(signupCallback.mock.calls.length).toEqual(1);
+  });
+
+  describe('with custom labels', () => {
+    const customLabelUsername = 'email';
+    const customLabelPassword = 'your secure pass';
+    const customLabelPasswordConfirmation = 'your secure pass confirmation';
+    const customRecoverPass = 'lost your pass?';
+    const customGoToLogin = 'Back to login';
+    const customSendSubmit = 'Custon send';
+    const wrapper = shallow(
+      <Signup
+        {...requiredMockProps}
+        usernameCustomLabel={customLabelUsername}
+        passwordCustomLabel={customLabelPassword}
+        passwordConfirmationCustomLabel={customLabelPasswordConfirmation}
+        recoverPasswordCustomLabel={customRecoverPass}
+        goToLoginCustomLabel={customGoToLogin}
+        submitSignupCustomLabel={customSendSubmit}
+      />,
+    );
+    it('should render custom labels if provided', () => {
+      expect(wrapper.find('input[name="username"]').prop('placeholder')).toEqual(customLabelUsername);
+      expect(wrapper.find('input[name="password"]').prop('placeholder')).toEqual(customLabelPassword);
+      expect(wrapper.find('input[name="passwordConfirmation"]').prop('placeholder')).toEqual(customLabelPasswordConfirmation);
+
+      expect(wrapper.find('#login-button').text()).toEqual(customGoToLogin);
+
+      expect(wrapper.find('input[type="submit"]').prop('value')).toEqual(customSendSubmit);
+    });
   });
 });
