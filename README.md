@@ -3,6 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/akiokio/ReactSignupLoginComponent.svg)](https://greenkeeper.io/)
 [![Coverage Status](https://coveralls.io/repos/github/akiokio/ReactSignupLoginComponent/badge.svg?branch=master)](https://coveralls.io/github/akiokio/ReactSignupLoginComponent?branch=master)
 [![Build Status](https://travis-ci.org/akiokio/ReactSignupLoginComponent.svg?branch=master)](https://travis-ci.org/akiokio/ReactSignupLoginComponent)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) to learn how to use it.
 
