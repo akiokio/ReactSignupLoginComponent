@@ -14,7 +14,7 @@ Check out the [examples](https://akiokio.github.io/ReactSignupLoginComponent/) t
 - Callbacks for every action
 - 100% test coverage
 - Drop-in component
-- Custom labels for any text: replace any text to your own nice for customization or internationalization
+- Custom labels for any text nice for customization or internationalization
 
 ## How to use it
 
@@ -145,18 +145,18 @@ You can overhide the component style passing an object to the styles prop. Here'
 ```
 
 ### Custom labels
-Here's the list of possible custom labels you can use:
+Here's the list of possible custom labels you can use (check the storybook for usage):
 ```
-  usernameCustomLabel="Anything you want"
-  passwordCustomLabel="Anything you want"
-  passwordConfirmationCustomLabel="Anything you want"
-  recoverPasswordCustomLabel="Anything you want"
-  signupCustomLabel="Anything you want"
-  submitLoginCustomLabel="Anything you want"
-  goToLoginCustomLabel="Anything you want"
-  submitSignupCustomLabel="Anything you want"
-  goToSignupCustomLabel="Anything you want"
-  submitRecoverPasswordCustomLabel="Anything you want"
+usernameCustomLabel="Anything you want"
+passwordCustomLabel="Anything you want"
+passwordConfirmationCustomLabel="Anything you want"
+recoverPasswordCustomLabel="Anything you want"
+signupCustomLabel="Anything you want"
+submitLoginCustomLabel="Anything you want"
+goToLoginCustomLabel="Anything you want"
+submitSignupCustomLabel="Anything you want"
+goToSignupCustomLabel="Anything you want"
+submitRecoverPasswordCustomLabel="Anything you want"
 ```
 
 ## Tests
