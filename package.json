@@ -22,7 +22,7 @@
   "devDependencies": {
     "@storybook/addon-actions": "^4.0.12",
     "@storybook/addon-links": "^4.0.12",
-    "@storybook/react": "^3.2.12",
+    "@storybook/react": "^4.0.12",
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.0.3",
     "coveralls": "^3.0.0",
