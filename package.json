@@ -37,7 +37,7 @@
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "15.6.2",
     "react-scripts": "1.1.5",
-    "react-test-renderer": "16",
+    "react-test-renderer": "^16.10.0",
     "semantic-release": "^15.0.0"
   },
   "dependencies": {
