@@ -20,7 +20,7 @@
     "build:module"
   ],
   "devDependencies": {
-    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-actions": "^5.3.0",
     "@storybook/addon-links": "^3.2.12",
     "@storybook/react": "^3.2.12",
     "babel-cli": "^6.26.0",
