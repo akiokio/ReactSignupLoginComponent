@@ -44,7 +44,7 @@
     "core-js": "^2.5.1",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "^16.13.0",
     "react-dom": "^16.0.0"
   },
   "homepage": "https://github.com/akiokio/ReactSignupLoginComponent",
